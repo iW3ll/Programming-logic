@@ -1,0 +1,271 @@
+﻿#include <stdio.h>
+/*Equipe 5: Eveny, Ronald e Wesley Desenvolver um programa que receba os limites do intervalo fechado [𝑎, 𝑏], onde 𝑎
+deve ser obrigatoriamente menor que 𝑏, e mostre quantos números primos existem
+neste intervalo.
+*/
+int primo(int x) {
+  int nPrimo, div=0, i;
+  for (i=1;i<=x;i++) {
+    if (x % i == 0){
+      div++;
+    }
+    if (div==2) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+  
+}
+  int main(void) {
+  int s, f;
+  int nPrimo, div=0, i;
+  printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+printf("\nVerificaremos os numeros primos entre 𝑎, 𝑏");
+printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+  printf("\nInforme o inicio do intervalo (𝑎): ");
+  scanf("%i",&s);
+  printf("\nInforme o final do intervalo (𝑏): ");
+  scanf("%i",&f);
+
+    if (f<i){
+      printf("Inicio deve ser menor que o final");
+    }
+    
+  for (i = s; i<=f; i++){
+    if (primo(i)==1){
+      printf("%i",i);
+      
+    }
+  }}
+
+
+
+
+#include <stdio.h>
+
+/*Equipe 5: Eveny Neves, Ronald Nepomuceno e Wesley Luiz                    
+   Data de entrega: 31/08/22
+Q 4. Desenvolver um programa que receba dois números 𝑥, 𝑦. Caso 𝑥 seja maior ou
+igual 𝑦 calcule e mostre a divisão inteira 𝑥 ÷ 𝑦 sem utilização de operadores de
+divisão. Caso 𝑥 seja menor que 𝑦 calcule e mostre a multiplicação 𝑥 ∗ 𝑦 sem a
+utilização do operador de multiplicação.
+*/
+
+int comparar(int num1,int num2){
+  int count=0,i;
+  
+  if (num1 >= num2){
+    while(num1>=num2) {
+      num1=num1-num2;
+      count++;
+     } return count;    
+  }else{
+    for(i = 1; i <= num1; i++){
+     count += num2;
+   }return count;
+  }
+}
+
+void resultado(int count){
+  printf("O resultado foi %i",count);
+}
+
+int main(){
+  //variaveis
+  int x,y,r;
+  //entrada de dados
+  printf("Digite dois números: ");
+  scanf("%d %d",&x,&y);
+  
+  //chamando a função de comparar e computação
+  r = comparar(x,y);
+  
+  //chamando a subrotina de resultado
+  resultado(r);
+     
+ 
+  return 0;
+}
+
+
+
+
+#include <stdio.h>
+/* Equipe 5: Eveny, Ronald e Wesley
+Q5. Desenvolva um programa que receba um conjunto de números inteiros
+obrigatoriamente não negativos e para cada número digitado informe:
+a) A quantidade de Des do número.
+b) O fatorial do número.
+c) Se o número é primo ou não.
+d) Se o número pertence a sequência de Fibonacci.
+e) A quantidade de números primos entre 1 e o número.
+
+A digitação de números deve ser encerrada mediante questionamento ao usuário.
+  */
+
+int Des(int i)
+{
+  int cont,d=0;
+  
+  for(cont=1;cont<=i;cont++)
+  {
+     if(i%cont==0)
+     {
+      d++;
+     }
+  }
+  return d;
+}
+void mostraDados(int d)
+{		
+	 printf ("\nO numero de Divisores eh: %i\n",d);	
+}
+double fatorial(double x) 
+{
+	
+	double fat;
+	
+    for (fat=1;x>1;x=x-1){
+		fat=fat*x;
+      }
+	return fat;
+}
+
+void mostraDados2(double fat,double y)
+{
+  if(y>0)
+  {
+    printf("\nO fatorial de %.0lf = %.0lf \n",y,fat);
+  }
+	else
+  {
+    printf("\nNao oi possivel calcular o fatorial do numero: %lf\n",y);
+  }
+}
+void verificando_primo(int i) 
+{
+  int cont, d=0;
+ 
+    d=Des(i);
+     if(d==2)
+     {
+     	printf("\nO numero %i eh primo!!\n",i);
+	   } 
+     else 
+     {
+       printf("\nO numero %i nao eh primo!!\n",i);
+     }
+}
+
+void testa_fibonacci(int n)
+{
+    int pt0,pt1,pt2,pt3;
+    int i,achou;    
+    pt0=0;
+    pt1=1;
+    pt2=0;
+    pt3=0;
+
+	do{
+		achou=0;
+		for (i=0;i<n;i++)
+    	{    
+        	pt2 = pt0 + pt1;
+        	if(pt2 == n)
+        	{
+        		achou = 1;
+            	break;
+        	}
+        
+        	pt0 = pt1;
+        	pt1 = pt2;
+    	}
+    	
+    	if (achou==1) {
+    		printf("\nO numero %i pertence a Fibonacci\n", n); 
+        break;
+		}
+		else
+		{
+    		printf("\nO numero %i nao pertence a Fibonacci\n", n);  
+        break;
+		}
+				    
+	} while(n!=-999);	
+}
+int num_primo(int i,int qnts) 
+{
+  int cont, d,D,x;
+   qnts=0;
+  
+  for (d=3; d<=i; d+2) 
+  {
+    
+    x = 0;
+    for (D=3; D<=i; D+2) 
+    {
+        if ( d % D==0 )    
+        {
+        x = x+1;
+        }
+            if ( x==1 )    
+            {
+              qnts++;            
+            }
+      } 
+  } 
+}
+void mostraDados5(int i ,int qnts)
+{		
+	 printf ("\nA quantidade de numeros primos entre 1 e %i eh: %i\n",i,qnts);	
+}
+
+int main()
+{
+	double n,f;
+	int r, D,i,N, d;
+  int qnts_primos;
+  
+	do {
+    
+		printf("\nInforme um numero: ");
+		scanf("%lf",&n);
+
+    if(n>0)
+    {
+      D=Des(n);
+		  mostraDados(D);
+		  f = fatorial(n);
+	    mostraDados2(f,n);
+	    verificando_primo(n); 
+      testa_fibonacci( n);
+     num_primo(n,qnts_primos);
+     mostraDados5(n,qnts_primos);
+    }
+    else
+    {
+      printf("Nao eh possivel calcular o numero pois o mesmo eh menor que 0!!!");
+    }
+  
+        
+    printf("\nPara continuar digite[1] e para sair digite[0]: \n");
+		scanf("%i",&r);
+
+      while(r!=1)
+        {
+          printf("POR FAVOR USUARIO DIGITE: [1] PARA CONTINUAR E [0] PARA SAIR!!!: \n");
+          scanf("%i",&r);
+
+          if(r==0)
+          {
+            break;
+          }
+        }
+       
+    
+	} while(r==1);
+	    
+}
+
+  

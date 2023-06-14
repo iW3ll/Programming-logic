@@ -1,0 +1,207 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+  /*
+	Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                           
+    Data de entrega: 24/05/2022
+				
+	Enunciado: 1) Dado um valor inteiro positivo que represente um montante de segundos converter o montante para o formato hh:mm:ss.
+  */
+
+int main(void) {
+
+	//Variaveis
+    int seg, h, m, s, resto;
+	
+	//Entrada de dados
+    printf("Digite um montante de segundos: ");
+    scanf("%d", &seg);
+    
+	//Computação
+    h = seg / 3600;
+    resto = seg % 3600;
+    m = resto / 60;
+    s = resto % 60;
+	
+	//Resultados
+    printf("%dh:%dm:%ds\n", h, m, s);
+  
+  return 0;
+}
+
+------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#define PI 3.14
+
+
+/* Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                           
+   Data de entrega: 24/05/22
+        
+   Enunciado 2): Um foguete é lançado formando com o solo um ângulo α. Depois de percorrer 𝑥
+	metros em linha reta determine a altura que o foguete se encontra.
+*/
+int main(){
+
+   //Declaração de variaveis
+   float altura,angulo,seno,linhaReta,radis;
+   
+   //Entrada de dados
+   printf("Informe a distancia percorrida: ");
+   scanf("%f", &linhaReta);
+   printf("Informe o angulo: ");
+   scanf("%f", &angulo);
+  
+   //Computação
+   radis = (angulo*PI)/180;
+   seno = sin(radis);
+   altura = seno*linhaReta;
+   
+   //Resultado
+   printf("A altura que o foguete se encontra é %f: ",altura);
+	
+   return 0;
+}
+
+---------------------------------------------------------------------------------
+
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+/* Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira
+   e Wesley Luiz Data de entrega: 24/05/2022
+
+   enunciando 3) Dados o comprimento dos lados de um triangulo equilátero determinar sua
+   altura.
+    */
+
+int main(void) {
+
+  // variaveis
+  int a, b, c;
+  double angulo, altura, resultado;
+#define PI 3.1415
+
+  // entrada de dados
+  printf("digite os valores de um triangulo (EQUILATERO):..\n");
+
+  printf("digite um angulo, EX: (30 ou 45 ou 60) : ");
+  scanf("%lf", &angulo);
+
+  printf("digite o valor de (A)");
+  scanf("%i", &a);
+
+  printf("digite o valor de (b)");
+  scanf("%i", &b);
+
+  printf("digite o valor de (c)");
+  scanf("%i", &c);
+
+  // computação
+  angulo = angulo * PI / 180;
+  altura = sin(angulo);
+  resultado = altura * a;
+  
+  //Resultado
+  printf("altura do triangulo é; %f", resultado);
+
+  return 0;
+}
+
+----------------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+	/*Autor: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira
+   e Wesley Luiz
+	  data:24/05/2022
+	  
+	 enunciado 4) Desenvolva um programa que receba um valor em Real (R$) sem os centavos (valor
+	nteiro) e informe quantas notas de 5 R$ ou 2 R$ podem existir no referido valor.
+	
+	*/
+
+int main(){
+	//Variaveis
+	int num,conta5,conta2;
+	
+	//Entrada de dados
+	printf("\n Digite um valor inteiro em reais que deseja sacar:\n\n");
+	scanf("%i",&num);
+	
+	//Computação
+	conta5= num/5;
+	conta2= num/2;
+	
+	//Resultados
+	printf("\n Voce pode sacar : %i notas de 5 reais?\n\n Ou pode sacar: %i notas de 2 reais?",conta5,conta2);
+	printf("\n Volte sempre!\n");
+	
+	
+	
+	
+	return 0;
+	
+}
+
+----------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+  /*Equipe 5: Ronald Nepomuceno, Eveny Neves, Vilmar Pereira, Claúdio Crisóstomo e Wesley Luiz
+Data de entrega: 24/05/2022
+
+Enunciado 5) Selecionar em livros ou pesquisar na Internet uma questão versando sobre
+conteúdo do Ensino Médio e apresentar o algoritmo computacional contendo
+entrada de dados, computação e resultado. A questão escolhida deve ser distinta
+entre todas apresentadas.
+
+Um programa que solucione equações do tipo f(x) = ax^2+bx+c para a,b e c sendo números inteiros quaisquer.
+    */
+
+  //variaveis
+int a, b, c, delt, x1, x2;
+
+  //entrada de dados
+   printf(" \nPara f(x) = ax² + bx + c\n");
+    printf("\nInforme um valor inteiro para a: "); 
+  scanf("%i", &a);
+    printf("\nInforme um valor inteiro para b: "); 
+  scanf("%i", &b);
+    printf("\nInforme um valor inteiro para c: "); 
+  scanf("%i", &c);
+
+  //Computaçao //Resultados
+
+  delt = (b*b - 4 * a * c);
+  
+  if(delt < 0)
+    
+  {
+    printf("\nA equação não possui raizes reais.");
+  }
+  else
+  {
+    if (delt == 0)
+    {
+      x1 = -b / (2 * a);
+      printf("Delta igual = 0.\nX1 =""%i",x1);
+    }
+    else
+    {
+      x1 = (-b + sqrt(delt)) / (2 * a);
+      x2 = (-b - sqrt(delt)) / (2 * a);
+      printf("\nRESULTADOS\n");
+      printf("x1 = ""%i\n",x1);
+      printf("x2 = ""%i\n",x2);
+      
+    }
+  }
+  return 0;
+}

@@ -1,0 +1,34 @@
+programa {
+	funcao inicio() {
+	    /*
+	    Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                       
+                Data de entrega:03/05/2022
+                
+                Enunciado8:Para um churrasco promovido por uma empresa, serão comprados exatamente 60
+                kg entre filé e linguiça, gastando no máximo R$ 1.590,00. Se o quilograma de filé
+                custa R$ 30,00 e o quilograma da linguiça R$ 24,00, quantos quilogramas de filé
+                poderão ser comprados ?
+	    */
+		real kgTot,vFile,vLing,vTot,kgLing,kgFile
+
+		//dados
+		escreva("Informe os quilos totais: " )
+		leia(kgTot)
+		
+		escreva("Informe o preço do file: ")
+		leia(vFile)
+		
+		escreva("Informe o preço da linguiça: ")
+		leia(vLing)
+		
+		escreva("Informe o valo máximo: ")
+		leia(vTot)
+		
+		//computação
+		kgLing= (vTot-vFile*kgTot)/(vLing-vFile)
+		kgFile= kgTot-kgLing
+		
+		//resultados
+		escreva("Quilos de file comprados: ",kgFile)
+	}
+}

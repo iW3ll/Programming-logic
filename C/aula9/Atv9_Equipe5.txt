@@ -1,0 +1,269 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+  /*
+	Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                           
+    Data de entrega: 24/05/2022
+				
+	Enunciado: 1) Dado um valor inteiro positivo que represente um montante de segundos converter o montante para o formato hh:mm:ss.
+  */
+
+int main(void) {
+
+	//Variaveis
+    int seg, h, m, s, resto;
+	
+	//Entrada de dados
+    printf("Digite um montante de segundos: ");
+    scanf("%d", &seg);
+    
+	//Computação
+    h = seg / 3600;
+    resto = seg % 3600;
+    m = resto / 60;
+    s = resto % 60;
+	
+	//Resultados
+    printf("%dh:%dm:%ds\n", h, m, s);
+  
+  return 0;
+}
+
+------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <iso646.h>
+
+
+
+
+/* Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                           
+   Data de entrega: 24/05/22
+        
+   Enunciado 2): Dado o ano de nascimento de quatro pessoas encontre a média das idades das pessoas
+   nascidas em ano bissexto.
+*/
+
+
+        int main()
+       {
+            //Declaração de variáveis
+           
+        int ano1, ano2, ano3, ano4, idade1, idade2, idade3, idade4, id1, id2, id3, id4, media;
+
+
+        // Entrada de dados
+           
+            printf("Digite o primeiro ano: \n");
+        scanf("%i",&ano1);
+
+
+        printf("Digite o segundo ano: \n");
+        scanf("%i",&ano2);
+
+
+        printf("digite o terceiro ano: \n");
+        scanf("%i",&ano3);
+
+
+        printf("digite o quarto ano: \n");
+        scanf("%i",&ano4);
+
+
+        //Computação
+                
+        idade1 = (2022 - ano1);
+        idade2 = (2022 - ano2);
+        idade3 = (2022 - ano3);
+        idade4 = (2022 - ano4);
+
+
+        //Resultados
+           
+            if((ano1 % 4 == 0) and (ano1 % 100 != 0) or (ano1 % 400 == 0))
+        { 
+        printf("O primeiro ano é um ano bissexto\n");
+        id1 = idade1;
+        }
+        else
+        {
+        printf("\n O primeiro ano não é bissexto\n");
+        id1 = 0;
+        }
+        if((ano2 % 4 == 0) and (ano2 % 100 != 0) or (ano2 % 400 == 0))
+        {
+        printf("\n O segundo ano é um ano bissexto\n");
+        id2 = idade2;
+        }
+        else
+        {
+        id2 = 0;
+        printf("\n O segundo ano não é bissexto\n");
+        }
+        if((ano3 % 4 == 0) and ((ano3 % 100 != 0))  or (ano3 % 400 == 0))
+        {
+        printf("\n O terceiro ano é um ano bissexto\n");
+        id3 = idade3;
+        }
+        else
+        {
+        id3 = 0;
+        printf("\n O terceiro ano não é bissexto\n");
+        }
+        if(((ano4 % 4 == 0)) and ((ano4 % 100 != 0)) or (ano4 % 400 == 0))
+        {
+        printf("\n O quarto ano é um ano bissexto\n");
+        id4 = idade4;
+        }
+        else
+        {
+        id4 = 0;
+        printf("\n O  quarto ano não é bissexto\n");
+        }
+        media = (id1 + id2 + id3 +id4) / 4;
+
+
+        printf("\n A  media dos anos bissextos eh de: %i", media);
+}
+
+---------------------------------------------------------------------------------
+
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+/* Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira
+   e Wesley Luiz Data de entrega: 24/05/2022
+
+   enunciando 3) Dados o comprimento dos lados de um triangulo equilátero determinar sua
+   altura.
+    */
+
+int main(void) {
+
+  // variaveis
+  int a, b, c;
+  double angulo, altura, resultado;
+#define PI 3.1415
+
+  // entrada de dados
+  printf("digite os valores de um triangulo (EQUILATERO):..\n");
+
+  printf("digite um angulo, EX: (30 ou 45 ou 60) : ");
+  scanf("%lf", &angulo);
+
+  printf("digite o valor de (A)");
+  scanf("%i", &a);
+
+  printf("digite o valor de (b)");
+  scanf("%i", &b);
+
+  printf("digite o valor de (c)");
+  scanf("%i", &c);
+
+  // computação
+  angulo = angulo * PI / 180;
+  altura = sin(angulo);
+  resultado = altura * a;
+  
+  //Resultado
+  printf("altura do triangulo é; %f", resultado);
+
+  return 0;
+}
+
+----------------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+	/*Autor: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira
+   e Wesley Luiz
+	  data:24/05/2022
+	  
+	 enunciado 4) Desenvolva um programa que receba um valor em Real (R$) sem os centavos (valor
+	nteiro) e informe quantas notas de 5 R$ ou 2 R$ podem existir no referido valor.
+	
+	*/
+
+int main(){
+	//Variaveis
+	int num,conta5,conta2;
+	
+	//Entrada de dados
+	printf("\n Digite um valor inteiro em reais que deseja sacar:\n\n");
+	scanf("%i",&num);
+	
+	//Computação
+	conta5= num/5;
+	conta2= num/2;
+	
+	//Resultados
+	printf("\n Voce pode sacar : %i notas de 5 reais?\n\n Ou pode sacar: %i notas de 2 reais?",conta5,conta2);
+	printf("\n Volte sempre!\n");
+	
+	
+	
+	
+	return 0;
+	
+}
+
+----------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+  /*Equipe 5: Ronald Nepomuceno, Eveny Neves, Vilmar Pereira, Claúdio Crisóstomo e Wesley Luiz
+Data de entrega: 24/05/2022
+
+Enunciado 5) Selecionar em livros ou pesquisar na Internet uma questão versando sobre
+conteúdo do Ensino Médio e apresentar o algoritmo computacional contendo
+entrada de dados, computação e resultado. A questão escolhida deve ser distinta
+entre todas apresentadas.
+
+Um programa que solucione equações do tipo f(x) = ax^2+bx+c para a,b e c sendo números inteiros quaisquer.
+    */
+
+  //variaveis
+int a, b, c, delt, x1, x2;
+
+  //entrada de dados
+   printf(" \nPara f(x) = ax² + bx + c\n");
+    printf("\nInforme um valor inteiro para a: "); 
+  scanf("%i", &a);
+    printf("\nInforme um valor inteiro para b: "); 
+  scanf("%i", &b);
+    printf("\nInforme um valor inteiro para c: "); 
+  scanf("%i", &c);
+
+  //Computaçao //Resultados
+
+  delt = (b*b - 4 * a * c);
+  
+  if(delt < 0)
+    
+  {
+    printf("\nA equação não possui raizes reais.");
+  }
+  else
+  {
+    if (delt == 0)
+    {
+      x1 = -b / (2 * a);
+      printf("Delta igual = 0.\nX1 =""%i",x1);
+    }
+    else
+    {
+      x1 = (-b + sqrt(delt)) / (2 * a);
+      x2 = (-b - sqrt(delt)) / (2 * a);
+      printf("\nRESULTADOS\n");
+      printf("x1 = ""%i\n",x1);
+      printf("x2 = ""%i\n",x2);
+      
+    }
+  }
+  return 0;
+}

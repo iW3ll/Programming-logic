@@ -1,0 +1,41 @@
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+/* Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira
+   e Wesley Luiz Data de entrega: 25/05/2022
+
+    Dados o comprimento dos lados de um triangulo equilátero determinar sua
+   altura.
+    */
+
+int main(void) {
+
+  // variaveis
+  int a, b, c;
+  double angulo, altura, resultado;
+#define PI 3.1415
+
+  // entrada de dados
+  printf("digite os valores de um triangulo (EQUILATERO):..\n");
+
+  printf("digite um angulo, EX: (30 ou 45 ou 60) : ");
+  scanf("%lf", &angulo);
+
+  printf("digite o valor de (A)");
+  scanf("%i", &a);
+
+  printf("digite o valor de (b)");
+  scanf("%i", &b);
+
+  printf("digite o valor de (c)");
+  scanf("%i", &c);
+
+  // computação
+  angulo = angulo * PI / 180;
+  altura = sin(angulo);
+  resultado = altura * a;
+  printf("altura do triangulo é; %f", resultado);
+
+  return 0;
+}

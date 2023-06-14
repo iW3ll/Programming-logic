@@ -1,0 +1,177 @@
+______________________________________Prova portugol Josildo____________________________________
+
+programa {
+    /*
+    Autor: Wesley Luiz Data: 27/5/22
+    Enunciado: 1) Desenvolver um programa que receba um valor  (R$) sem os centavos (valor inteiro) e informe a decomposição do valor em notas de 50 R$,
+    20 R$, 5R$ e 1R$. Assim, o valor 87 R$ possui 1 = 50R$, 1 = 20R$, 3 = 5R$, 2 = 1R$.
+	*/
+	funcao inicio() {
+		//Declaração de variáveis
+		inteiro dinheiro,dinheiro2,cinquenta,vinte,cinco,um
+		
+		//Dados
+		escreva("Digite o valor R$?: ")
+		leia(dinheiro)
+		
+		//Computação
+		dinheiro2 = dinheiro
+	    cinquenta = dinheiro / 50
+	    dinheiro = dinheiro % 50
+	    vinte = dinheiro / 20
+	    dinheiro = dinheiro % 20
+	    cinco = dinheiro / 5
+	    dinheiro = dinheiro % 5
+	    um = dinheiro / 1
+	    dinheiro = dinheiro % 1
+	    
+        //Resultados	  
+		escreva("O valor " ,dinheiro2, " possui  ",cinquenta, " = 50R$, ",vinte," = 20R$, ",cinco, " = 5R$, ",um, " = 1R$.")
+		
+	}
+}
+
+
+________________________________________________
+
+programa {
+    /*
+    Autor: Wesley Luiz Data: 27/5/22
+    Enunciado: 2) Desenvolva um programa que receba nome e idade de três pessoas. O programa deve mostrar nome e idade da pessoa mais jovem nascida 
+    em ano ímpar. Considere o ano de 2021 para efeitos de verificação de idade.  Deve-se dar mensagem caso ninguém tenha nascido em ano ímpar.
+    */
+	funcao inicio() {
+		//Declaração de variáveis
+		cadeia nome,nome2,nome3
+		inteiro idade,idade2,idade3
+		
+		escreva("Digite o 1º nome: ")
+		leia(nome)
+		escreva("Digite a idade: ")
+		leia(idade)
+		escreva("Digite o 2º nome: ")
+		leia(nome2)
+		escreva("Digite a idade: ")
+		leia(idade2)
+		escreva("Digite o 3º nome: ")
+		leia(nome3)
+		escreva("Digite a idade: ")
+		leia(idade3)
+		
+		idade = (2021 - idade)
+        idade2 = (2021 - idade2)
+        idade3 = (2021 - idade3)
+        
+        se (idade > idade2 e idade > idade3 e 2021 % idade == 1 ){
+            escreva("Nome = ",nome, " Idade = ",idade)
+        } 
+            /*se(2021 % idade / 2 == 1){
+                escreva("Nome = ",nome, " Idade = ",idade)
+            }
+            */
+        
+        se (idade2 > idade e idade2 > idade3 e 2021 % idade == 1 ){
+            escreva("Nome = ",nome2, " Idade = ",idade2)
+        }
+           /* se(2021 % idade / 2 == 1){
+                escreva("Nome = ",nome, " Idade = ",idade)
+            }*/
+        se (idade3 > idade e idade3 > idade2 e 2021 % idade == 1){
+           escreva("Nome = ",nome3, " Idade = ",idade3)
+        }
+            /*se(2021 % idade / 2 == 1){
+                escreva("Nome = ",nome, " Idade = ",idade)
+            }*/
+        senao{
+            escreva("Ninguém nasceu em ano impar")
+        }
+        //escreva("Pessoa1 = ",idade, " pessoa2 = " ,idade2, " pessoa 3 = ",idade3)
+        
+	}
+}
+
+__________________________________________________
+
+programa {
+    /*Autor: Wesley Data: 27/5/22
+    Enunciado: 3) Dado o ano de nascimento de três pessoas encontre a média das idades das pessoas nascidas em ano bissexto com 12 anos ou mais 
+    de idade. Considere o ano de 2020 para efeito de verificação da idade.
+    */
+	funcao inicio() {
+		//declaração variaveis
+		inteiro ano1,ano2,ano3,idade1,idade2,idade3,media
+		
+		//Dados
+		escreva("Digite o primeiro ano: ")
+		leia(ano1)
+		escreva("Digite o segundo ano: ")
+		leia(ano2)
+		escreva("Digite o terceiro ano:")
+		leia(ano3)
+		
+		//Computação
+		idade1 = (2020 - 12 - ano1)
+        idade2 = (2020 - 12 - ano2)
+        idade3 = (2020 - 12 - ano3)
+       
+        //Resultados
+		se(ano1 % 4 == 0 e ano1 % 100 != 0 ou ano1 % 400 == 0){
+		    escreva("\nO primeiro ano é um ano bissexto")
+		    
+		}
+		senao {
+		    escreva("\nO primeiro ano não é um ano bissexto")
+		}
+		se(ano2 % 4 == 0 e ano2 % 100 != 0 ou ano2 % 400 == 0){
+		    escreva("\nO segundo ano é um ano bissexto")
+		    
+		}
+		senao {
+		    escreva("\nO segundo ano não é um ano bissexto")
+		}
+		se(ano3 % 4 == 0 e ano3 % 100 != 0 ou ano3 % 400 == 0){
+		    escreva("\nO terceiro ano é um ano bissexto")
+		    
+		}
+        senao {
+		    escreva("\nO terceiro ano não é um ano bissexto")
+        }
+        
+        
+        media = (idade1 + idade2 + idade3 / 4)
+        escreva("\nA média de idade é: " ,media)
+	}
+}
+
+___________________________________________________________
+
+programa {
+    /*Autor: Wesley Luiz Data: 27/5/22
+    Enunciado: 4) Com R$ 120,00 é possível comprar 6 pastas, a R$ 4,00 a unidade, e 8 cadernos iguais, não restando troco algum. 
+    Qual é o maior número de pastas que podem ser compradas com o mesmo valor pago na compra de um caderno ?
+    */
+	funcao inicio() {
+		//Declaração variáveis
+		inteiro valorT, pastaQuant, pastaUni, caderno,cal,cadernoVL,pastaResult
+		
+		
+		//Dados
+		escreva("Digite o valor total que você tem?: ")
+		leia(valorT)
+		escreva("Digite quantidade de pastas?: ")
+		leia(pastaQuant)
+		escreva("Digite a unidade da pasta?: ")
+		leia(pastaUni)
+		escreva("Digite a quantidade de cadernos?: ")
+		leia(caderno)
+		
+		//Computação
+		cal = pastaQuant * pastaUni
+		cadernoVL = (valorT - cal) / caderno
+		pastaResult = cadernoVL / pastaUni
+		
+		//Resultados
+		escreva("O maior número de pastas que podem ser compradas é " ,pastaResult)
+		
+	}
+}

@@ -1,0 +1,40 @@
+/*Para um churrasco promovido por uma empresa, serão comprados exatamente 60
+kg entre filé e linguiça, gastando no máximo R$ 1.590,00. Se o quilograma de filé
+custa R$ 30,00 e o quilograma da linguiça R$ 24,00, quantos quilogramas de filé
+poderão ser comprados ?
+*/
+
+programa {
+    
+    inclua biblioteca Matematica --> mat
+    
+	funcao inicio() {
+	    real fileLingui,gastoMax,fileQuilo,linguiQuilo,subFileLing,multiFL,divFile,resultado,arredondado,subFile
+	    
+	    
+	    // Dados
+	    
+	    escreva("Quantos KG de filé e linguiça?: ")
+	    leia(fileLingui)
+	    
+	    escreva("Qual o gasto maximo? Coloque sem virgula ou ponto: ")
+	    leia(gastoMax)
+	    
+	    escreva("Quanto custa o quilograma do filé?: ")
+	    leia(fileQuilo)
+	    
+	    escreva("Quanto custa o quilograma da linguiça?: ")
+	    leia(linguiQuilo)
+		
+		// Computação
+		
+		
+		multiFL = (fileLingui * linguiQuilo)
+		subFileLing = (gastoMax - multiFL)
+		subFile = (fileLingui - (linguiQuilo + fileQuilo))
+		resultado = (subFileLing / subFile)
+	
+		
+		escreva(" Poderão ser compradas " ,resultado,"KG de filé.")
+	}
+}

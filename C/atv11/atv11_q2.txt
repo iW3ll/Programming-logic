@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <math.h>
+
+/* Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                    
+   Data de entrega: 13/07/22
+2. Dado um número inteiro qualquer, uma vez que seja positivo, desenvolva um
+programa:
+
+a. Exibir todos os divisores desse número.
+b. Contar todos os divisores desse número e a partir dessa contagem informar
+se tal número é ou não primo.
+*/
+
+int main()
+{
+  //variaveis
+	int n,cont;
+	
+	printf("Informe um número: ");
+	scanf("%i",&n);
+
+  //computação resultados
+  if (n <=0){
+    printf("Coloque um número positivo");
+  }
+  
+    for (cont=1;cont<=n;cont++)
+	{    	
+	    if (n%cont==0) {
+	    	printf("Dividido por = %i \t",cont);    
+		} 
+      
+  } 
+  if (n%cont==0){
+    printf("É primo %i", cont);
+    }
+    else{
+    printf("Não é primo");
+    }
+  
+  return 0;
+}

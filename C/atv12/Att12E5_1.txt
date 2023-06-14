@@ -1,0 +1,370 @@
+
+_________________________________________ATIVIDADE 12_________________________________________________________________________________
+
+#include <stdio.h>
+#include <string.h>
+
+/* Equipe 5: Cláudio Crisostomo, Eveny Neves e Wesley Luiz              
+   Data de entrega: 18/08/2022
+1. Desenvolva um programa/algoritmo para ler nome e ano de nascimento de um
+conjunto de pessoas. O programa deve exibir o nome da pessoa mais velha que
+nasceu em um ano ?mpar. A leitura dos dados se encerra quando o usu?rio digita
+zero para o ano de nascimento. Uma mensagem deve ser exibida caso n?o seja
+informado nascimentos em ano ?mpar.*/
+
+int main(){
+	
+	char nome[100], nome_velho[100];
+	int ano, resp,ano_velho,c;
+	
+	resp=1;
+	c=1;
+	
+	while(resp==1) {
+		
+		printf("\nInforme o nome[%i]:",c);
+		scanf("%s",nome);
+		
+		printf("\nInforme o ano de nascimento[%i]:",c);
+		scanf("%i", &ano);
+		
+	
+	
+	  while (ano<=0)  {
+		
+		  printf("\nInforme um ano de nascimento valido!\n");
+		
+      printf("\nInforme o ano de nascimento:[%i]",c);
+		  scanf("%i",&ano);
+	
+	}
+    if((c==1)&&(ano%2==1)){
+    
+      ano_velho=ano;  
+      strcpy(nome_velho,nome);
+      
+    }
+	  
+	  
+	  
+	  else if ((ano<ano_velho)&&(ano%2==1)){
+    
+      ano_velho=ano;
+      strcpy(nome_velho,nome);
+    
+  }
+  
+	else {
+  		
+  		printf("\nN?o foi digitado uma ano impar!\n");
+	  }
+  	
+  	  
+	c=c+1;
+  
+      printf("continuar digita??o [1=Sim ou 0=N?o]?");
+      scanf("%i",&resp); getchar();
+	
+  }
+  
+      printf("\n Mais velho nascido em ano impar= %s\n",nome_velho);
+	
+	
+
+ return 0; 
+}
+
+________________________________________________________________________________________________________________________
+
+#include <stdio.h>
+
+
+ /* Equipe 5: Cláudio Crisostomo, Eveny Neves e Wesley Luiz              
+Data de entrega: 18/08/2022
+Questão 2: Desenvolva um programa que leia um conjunto de números de cinco dígitos e
+exiba seu inverso (o novo número invertido deve ser calculado). Deve-se
+assegurar que o número tenha obrigatoriamente cinco dígitos. Assim, quando
+usuário informar o número 12345, o programa deverá exibir 54321. A digitação
+encerra mediante resposta do usuário de continuar ou não.
+    */
+
+int main() {
+  
+ //variaveis
+  int n, n2, invertido;
+  int unid, dez, cem, mil, milh;
+  
+  //entrada de dados
+  printf("\nInforme um número de 5 digitos: ");
+  scanf("%i", &n);
+  
+  //computação //resultados  
+  do {
+  if (n >=10000 && n <= 99999) {
+  
+  unid = n/10000;
+  dez = (n % 10000)/1000;
+  cem = (n % 10000 % 1000)/100;
+  mil = (n % 10000 % 1000 % 100)/10;
+  milh = (n % 10000 % 1000 % 100 % 10);
+  
+  (invertido = milh*10000+mil*1000+cem*100+dez*10+unid);
+
+  printf("\nO número invertido é: %i\n", invertido);
+    }
+  else {
+    printf("\nInválido!");
+    printf("\nPor favor, informe um número de 5 digitos.\n");
+  }
+  
+    printf("\nDigite 1 para continuar ou 0 para encerrar ");
+    scanf("%i", &n2);
+    
+    } while (n2 == 1);
+  
+   if (n2 == 0) {
+      printf("\nPrograma encerrado.");
+    }
+  
+  return 0;
+________________________________________________________________________________________________________________________
+#include <stdio.h>
+#include <stdlib.h>
+
+
+/* Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                    
+   Data de entrega: 18/08/22
+    Enunciado 3. Construa um programa que receba um conjunto de números inteiros cuja
+	quantidade de elementos não pode ultrapassar 100. Contudo, o usuário pode
+	encerrar a digitação a qualquer momento. Ao final da digitação dos números 
+	o programa deve exibir:
+	a) O sucessor do maior número primo informado.
+	b) A média dos pares positivos múltiplos de 3.
+      
+*/
+#define qt_max 100
+
+int main()
+{
+      //Declaração de variáveis
+      int num, c=1, resp,div=0,i=0,sucessor=0,maiorprim,p=0,somador=0,contador=0;
+      float media;
+     
+      //Entrada de dados e computação
+      do
+	  {	  		
+		printf("\nInforme um numero[%i]:\n ",c);
+	  	scanf("%i",&num);
+
+	  	div=0;
+		//contagem de divisores 
+	  	for(i=1;i<=num;i++)
+	  	{
+	  		if(num%i==0)
+	  		{
+	  			div++;
+			}
+		}
+						
+		if(div==2)
+		{
+			if (p==0) {
+				maiorprim=num;
+			}
+			else if(num>maiorprim){
+				maiorprim=num;
+			}
+			p++;
+		}
+
+		if(num%3==0 && num%2==0 && num>0) 
+		{
+			somador=somador+num;
+			contador++;				
+		}
+	  	  	  	
+	  	printf("\nDeseja continuar? Digite[1=Sim;0=Nao]\n");
+      	scanf("%i",&resp);
+	  		  	
+	  	c++;
+	  	
+	  } while( resp==1 && c<=qt_max );
+
+	  if(p>0)
+	  {
+	  	sucessor = maiorprim+1;
+	  	printf(" e o sucessor do maior numero primo informado e: %i",sucessor);
+	  }
+	  else
+	  {
+	  	printf("Nao foi informado nenhum numero prinmo");
+	  }
+
+	  if(contador>0)
+	  {
+	  	media = somador/(float)contador;
+	  	
+	  	printf(" a media dos numeros pares multiplos de 3  positivos e: %f ",media); 	
+	  }
+	  else
+	  {
+	  	printf("nao foi informado valores positivos multiplos de 3 ");
+	  }
+	  
+}
+
+
+_________________________________________________________
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+/* Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                    
+   Data de entrega: 18/08/22
+    Enunciado 4. Desenvolva um programa que receba nome, sexo e nota finais (entre 0 e 10) de
+	um conjunto de alunos. O programa deverá exibir o nome e nota da mulher que
+	obteve a melhor nota e se a menor nota foi de um homem. As notas só devem ser
+	aceitas se estiverem no intervalo entre 0 e 10. O sexo só deve ser aceito se for
+	masculino ou feminino. A leitura dos dados é encerrada mediante questionamento
+	ao usuário. 
+*/
+
+int main()
+{
+      //Declaração de variáveis
+      int resp, c=1, verificador,f=0,m=0;
+      char nome[100], sexo[100],  sexomenor[100], masc[10]="m", fem[10]="f",nomefem[100],nomemasc[100];
+      float nota, maiorfem=0,menornota;
+    
+      //Entrada de dados e computação
+      do
+	  {
+	  	printf("Informe o nome da pessoa[%i]: ",c);
+	  	scanf("%s",nome);
+	  	
+	  	do
+	  	{
+	  		printf("Informe o sexo da pessoa[%i] Digite[feminino ou masculino]: ",c);
+	  		scanf("%s", sexo);
+			
+			if( !(0==strcmp(sexo,fem) || 0==strcmp(sexo,masc)))			
+	  		{
+	  			printf("\nValor invalido!\n");
+			}
+			 			
+		}while(0!=strcmp(sexo,masc) && 0!=strcmp(sexo,fem));
+	
+		
+		do{
+				printf("Informe a nota da pessoa[%i]: ",c);
+	  		    scanf("%f",&nota);
+				
+		}while( !(nota>=0 && nota<=10) ) ;	
+	  	
+	  	// descobrindo maior nota entre as mulheres
+		if(strcmp(sexo,fem)==0)
+	  	{
+			if(f==0){
+	  			maiorfem=nota;				
+	  			strcpy(nomefem,nome);
+			}
+			else if (nota>=maiorfem){
+	  			maiorfem=nota;				
+	  			strcpy(nomefem,nome);				
+			}
+			f++;
+		}  
+		
+		// descobrindo a menor nota e o sexo 
+		if(c==1)
+		{
+	  		menornota=nota;
+	  		strcpy(sexomenor,sexo);
+		}
+		else if (nota<menornota)
+  		{
+	  		menornota=nota;
+	  		strcpy(sexomenor,sexo);
+		}
+		printf("deseja continuar? Digite[1 = sim / 0 = nao]: ")	;
+		scanf("%i",&resp);	
+		c++;
+      	
+	}while(resp==1);
+	
+	//Resultados
+	if(f>0)
+	{
+		printf("a maior nota feminina: %s - : %f ",nomefem,maiorfem);	
+	}
+	else
+	{
+		printf("nao foi informado nenhuma nota feminina ");	
+	}
+	
+	if(strcmp(sexomenor,masc)==0)
+	{
+		printf("a menor nota foi de um homem. ");
+    }
+	else
+	{
+		printf("a menor notao nao foi nota masculina");
+	}	
+}
+
+
+
+______________________________________________________________________________________________________________________
+
+
+
+}
+#include <stdio.h>
+
+/* Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                    
+   Data de entrega: 18/08/22
+Enunciado 5: A série de Fibonacci é formada pela sequência: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55,...
+Escreva um programa que receba um conjunto de números e informe se o número
+pertence ou não a série de Fibonacci. A digitação dos números finaliza com a
+entrada do valor –999.*/
+
+int main() {
+  int t0, t1, t2, t3, n;
+  int i, encontrou;
+  t0 = 0;
+  t1 = 1;
+  t2 = 0;
+  t3 = 0;
+
+  do {
+    printf("Informe o numero  ser comparado: ");
+    scanf("%i", & n);
+
+    t0 = 0;
+    t1 = 1;
+    t2 = 0;
+    t3 = 0;
+    encontrou = 0;
+    for (i = 0; i < n; i++) {
+      t2 = t0 + t1;
+      if (t2 == n) {
+        encontrou = 1;
+        break;
+      }
+
+      t0 = t1;
+      t1 = t2;
+    }
+
+    if (encontrou == 1) {
+      printf("\n %i pertence a Fibonacci\n", n);
+    } else {
+      printf("\n %i nao pertence a Fibonacci\n", n);
+    }
+
+  } while (n != -999);
+
+}

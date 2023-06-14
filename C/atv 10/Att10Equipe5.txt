@@ -1,0 +1,568 @@
+                                                ATIVIDADE 10
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#include <stdio.h>
+#include <stdlib.h>
+
+	/*
+	Equpe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz.
+
+	Data de entrega: 24/07/2022
+
+	Questão 01 
+	-Dado um número inteiro positivo qualquer, verificar se ele possui cinco dígitos. Em caso
+	afirmativo, decidir se esse número é palíndromo ímpar (número palíndromo é aquele que
+	é igual quando lido nos dois sentidos). Exemplos de números palíndromos impares: 98589,
+	73137 e 10801.
+	*/
+
+int main(){
+	
+	//variaveis
+	int n,unidade,dezena,centena,mil, mil_2;
+	int num, div,aux;
+	
+	//entrada de dados
+	printf("\n Digite um numero interio com 5 digitos:\n");
+	scanf("%i",&n);
+	
+	
+	//programação //Resultados
+	div = n/10000;
+	aux = (div >= 1 && div <=9);
+
+	
+	if(n<=0) {
+	
+		printf("\n Numero negativo! Tente novamente!\n");
+	
+}
+	
+	
+	if(aux){
+	
+	unidade= (n % 10);
+	dezena= (n%100)/10;
+	centena= (n%1000)/100;
+	mil=(n%10000)/1000;
+	mil_2= n /10000;
+	num= ((unidade * 10000) + (centena *  100) + (dezena * 1000)  + (mil * 10)) + mil_2;
+
+
+	if ((n == num) && (num % 2 == 1)) {
+	
+		printf ("o numero e um palindromo impar\n");
+  }
+	
+		else if ((n != num) && (num % 2 != 1)){
+		  
+		printf ("O numero não e palidromo impar\n");
+    }
+	
+		else if ((n != num) || (num % 2 != 1)){
+		  
+		 printf("Não é palidromo ou não é impar\n");
+         
+
+	}
+	
+}
+
+	
+return 0;	
+	
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+/* Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz 
+
+Data de entrega: 24/07/2022
+
+    Questão 2: Dado o ano de nascimento de quatro pessoas encontre a média das idades das pessoas
+nascidas em ano bissexto.
+    */
+
+int main(void) {
+
+  // variaveis
+  int ano, ano2, ano3, 
+  int ano4, media, cont, contm=0, at=2022;
+  
+
+
+  
+  
+   // entrada de dados
+  printf("digite o ano de nascimento da primeira pessoa : ");
+  scanf("%i", &ano);
+
+  printf("digite o ano de nascimento da segunda pessoa :");
+  scanf("%i", &ano2);
+
+  printf("digite o ano de nascimento da terceira pessoa :");
+  scanf("%i", &ano3);
+
+  printf("digite o ano de nascimento da quarta pessoa :");
+  scanf("%i", &ano4);
+
+  // computação //Resultados
+     if (ano %4 ==0 && ano %100 !=0 || ano %400 ==0){
+      cont= at-ano;
+      
+      contm= contm+1;}
+  
+     if (ano2 %4 ==0 && ano2 %100 !=0 || ano2 %400 ==0){
+      cont= cont+(at-ano2);
+      
+      contm= contm+1;}
+  
+      if (ano3 %4 ==0 && ano3 %100 !=0 || ano3 %400 ==0){
+     cont= cont+(at-ano3);
+     
+     contm= contm+1;}
+   
+       if(ano4 %4 ==0 && ano4 %100 !=0 || ano4 %400 ==0){
+       cont= cont+(at-ano4);
+      
+      contm= contm+1;
+  }
+   media=cont/contm;
+   //exibição
+  printf("\nmedia das idades %i", media);
+ 
+  return 0;
+}
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+/*
+Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                           
+   Data de entrega: 24/07/22
+
+enunciado 3) Dados três notas, o total de aulas ministradas, e o número de faltas de um aluno em uma
+disciplina qualquer verificar a sua situação final: aprovado, reprovado por falta ou
+reprovado por média. A média para aprovação é informada e o limite de faltas é 25% do
+total de aulas ministradas. A reprovação por falta sobrepõe a reprovação por média, ou
+seja, se reprovado por falta não tem mais relevância a média das notas.
+*/
+int main(){
+  
+//declarção de variaveis
+	int n1,n2,n3,m,ngeral;
+	float faltas,aulas,mfaltas;
+  
+//entrada de dados
+	printf("Informe a primeira nota:");
+	scanf("%d", &n1);	
+	printf("Informe a segunda nota:");
+	scanf("%d", &n2);
+	printf("Informe a terceira nota:");
+	scanf("%d", &n3);
+	printf("Informe a media para passar direto:");
+	scanf("%d", &m);
+	printf("Informe o total de aulas ministradas:");
+	scanf("%f", &aulas);
+	printf("Informe o numero de faltas:");
+	scanf("%f", &faltas);
+
+//Computação //Resultados
+	ngeral = n1+n2+n3;
+	mfaltas = faltas/aulas;
+	if ((ngeral/3 >= m) && mfaltas > 0.25 )
+	{
+		printf("O aluno foi reprovado por falta.");
+	}
+	else
+	if ((ngeral/3 >= m) && mfaltas <= 0.25)
+	{
+		printf("O aluno foi aprovado.");
+	}
+	else
+	if ((ngeral/3 < m))
+	{
+		printf("O aluno foi reprovado por media.");
+	}
+
+	}
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/*Equipe 5: Ronald Nepomuceno, Eveny Neves, Vilmar Pereira, Claúdio Crisóstomo e Wesley Luiz
+
+Data de entrega: 24/07/2022 
+
+ Enunciado 4) Desenvolva um programa que receba um número inteiro no intervalo fechado entre 1 e
+1000 e mostre seu extenso usando no máximo cinco instruções de exibição (printf). Exiba
+uma mensagem de erro se o número estiver fora do intervalo.
+  */
+int main(){
+  
+	//variaveis
+	int n,m,c,d,u;
+	char mtxt[30],ctxt[30],dtxt[30],utxt[30];
+	char num_extenso[100];
+	
+	// Entrada de dados
+	printf("Informe um numero inteiro: ");
+	scanf("%i",&n);
+
+    //Computação //Resultados
+    if (n>=1 && n<=1000) {
+    	m = n / 1000;
+    	c = n % 1000 / 100;
+    	d = n % 100 / 10;
+    	u = n % 10;
+    	
+    	switch (m) {
+    		case 0: strcpy(mtxt,""); break;
+			case 1: strcpy(mtxt,"mil"); break;
+		}
+		
+		switch (c){
+			case 0: strcpy(ctxt,""); break;
+			case 1: if (d==0 && u==0) {
+						strcpy(ctxt,"cem");
+					}
+					else {
+					   strcpy(ctxt,"cento"); 
+					}
+			        break;			
+			case 2: strcpy(ctxt,"duzentos"); break;
+			case 3: strcpy(ctxt,"trezentos"); break;
+			case 4: strcpy(ctxt,"quatrocentos"); break;
+			case 5: strcpy(ctxt,"quinhentos"); break;
+			case 6: strcpy(ctxt,"seiscentos"); break;
+			case 7: strcpy(ctxt,"setecentos"); break;
+			case 8: strcpy(ctxt,"oitocentos"); break;
+			case 9: strcpy(ctxt,"novecentos"); break;
+		} 
+		
+		switch (d) {
+			case 0: strcpy(dtxt,""); break;
+      case 1: if (d==1 && u==0){
+        strcpy(dtxt,"dez");
+        } 
+        else if (d==1 && u==1) {
+          strcpy(dtxt,"onze"); 
+        } 
+          
+        else if (d==1 && u==2) {
+          strcpy(dtxt,"doze"); 
+        } 
+        else if (d==1 && u==3) {
+          strcpy(dtxt,"treze"); 
+        }
+        else if (d==1 && u==4) {
+          strcpy(dtxt,"catorze"); 
+        } 
+        else if (d==1 && u==5) {
+          strcpy(dtxt,"quinze"); 
+        } 
+        else{
+          strcpy(dtxt,"deze");
+        } 
+            break;
+      case 2: strcpy(dtxt,"vinte"); break;
+      case 3: strcpy(dtxt,"trinta"); break;
+      case 4: strcpy(dtxt,"quarenta"); break;
+      case 5: strcpy(dtxt,"cinquenta"); break;
+      case 6: strcpy(dtxt,"sessenta"); break;
+      case 7: strcpy(dtxt,"setenta"); break;
+      case 8: strcpy(dtxt,"oitenta"); break;
+      case 9: strcpy(dtxt,"noventa"); break;
+      } 
+
+		switch (u) {
+			case 0: strcpy(utxt,""); break;
+			case 1: strcpy(utxt,"um"); break;
+			case 2: strcpy(utxt,"dois"); break;
+			case 3: strcpy(utxt,"tres"); break;
+			case 4: strcpy(utxt,"quatro"); break;
+			case 5: strcpy(utxt,"cinco"); break;
+			case 6: strcpy(utxt,"seis"); break;
+			case 7: strcpy(utxt,"sete"); break;
+			case 8: strcpy(utxt,"oito"); break;
+			case 9: strcpy(utxt,"nove"); break;
+		}		
+		
+		strcpy(num_extenso,mtxt);
+		strcat(num_extenso," ");
+      if (c >= 0 && d == 0 && u == 0){
+        strcat(num_extenso,ctxt);
+		    strcat(num_extenso," "); 
+      }
+      else if (c >= 1 && d >= 0 && u >= 0){
+        strcat(num_extenso,ctxt);
+		    strcat(num_extenso," e "); 
+      } 
+      if (d == 1 && u < 6){
+        strcat(num_extenso,dtxt);
+		    strcat(num_extenso," "); 
+      } 
+      else if (d == 1 && u >= 6){
+       strcat(num_extenso,dtxt);
+		   strcat(num_extenso,utxt); 
+      }
+     else if (d >= 2 && u == 0){
+       strcat(num_extenso,dtxt);
+		   strcat(num_extenso,utxt);
+      }
+     else if (d >= 2 && u >= 1){
+       strcat(num_extenso,dtxt);
+		   strcat(num_extenso," e ");
+       strcat(num_extenso,utxt);
+     }
+        
+      else if (u < 10){
+        strcat(num_extenso, utxt);
+      }
+		
+		printf("\n %i = %s",n,num_extenso);
+	}
+	else printf("O numero esta fora do intervalo 1..1000.");
+}
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+# include  <stdio.h>
+# include  <stdlib.h>
+# include  <string.h>
+
+/* Equpe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz.
+
+Data de entrega: 24/07/2022
+
+Questão 5: Desenvolva um programa que a partir do dia e do mês de nascimento de uma pessoa informe seu signo baseado na tabela a seguir:
+Áries 20/03 a 20/04
+Touro 21/04 a 20/05
+Gêmeos 21/05 a 20/06
+Câncer 21/06 a 21/07
+Leão 22/07 a 22/08
+Virgem 23/08 a 22/09
+Libra 23/09 a 22/10
+Escorpião 23/10 a 21/11
+Sagitário 22/11 a 21/12
+Capricórnio 22/12 a 21/01
+Aquário 22/01 a 18/02
+Peixes 19/02 a 19/03
+  */
+int  main (){
+  
+	//Declaração de variaveis
+	int mes,dia;
+  
+	//Entrada de dados.
+	printf ( " Informe seu dia: " );
+	scanf ("%i" ,&dia);
+
+	printf ( " Informe seu mês: " );
+	scanf ("%i" ,&mes);
+
+  //Computação //Resultados
+	switch (mes) {
+		case 1: if (mes == 1) {
+      
+    }
+      if (dia>=1 && dia<=21) {
+					printf("\n Você é de Capricórnio");
+				} else if (dia>=22 && dia<=31)		
+					printf("\n Você é de Aquário"); 
+				else {
+					printf("\n Dia invalido.");
+				}
+									
+				break;
+				
+	}
+
+  switch (mes) {
+		case 2: if (mes == 2) {
+      
+    }
+      if (dia>=1 && dia<=18) {
+					printf("\n Você é de Aquário");
+				} else if (dia>=1 && dia>=19)		
+					printf("\n Você é de Peixes"); 
+				else {
+					printf("\n Dia invalido.");
+				}
+									
+				break;
+				
+	}
+  switch (mes) {
+		case 3: if (mes == 3) {
+      
+    }
+      if (dia>=1 && dia<=19) {
+					printf("\n Você é de Peixes");
+				} else if (dia>=1 && dia>=20)		
+					printf("\n Você é de Áries"); 
+				else {
+					printf("\n Dia invalido.");
+				}
+									
+				break;
+				
+	}
+  switch (mes) {
+		case 4: if (mes == 4) {
+      
+    }
+      if (dia>=1 && dia<=20) {
+					printf("\n Você é de Áries");
+				} else if (dia>=1 && dia>=21)		
+					printf("\n Você é de Touro"); 
+				else {
+					printf("\n Dia invalido.");
+				}
+									
+				break;
+				
+	}
+  switch (mes) {
+		case 5: if (mes == 5) {
+      
+    }
+      if (dia>=1 && dia<=20) {
+					printf("\n Você é de Touro");
+				} else if (dia>=1 && dia>=21)		
+					printf("\n Você é de Gemeos"); 
+				else {
+					printf("\n Dia invalido.");
+				}
+									
+				break;
+				
+	}
+  switch (mes) {
+		case 6: if (mes == 6) {
+      
+    }
+      if (dia>=1 && dia<=20) {
+					printf("\n Você é de Gemeos");
+				} else if (dia>=1 && dia>=21)		
+					printf("\n Você é de Cancer"); 
+				else {
+					printf("\n Dia invalido.");
+				}
+									
+				break;
+				
+	}
+   switch (mes) {
+		case 7: if (mes == 7) {
+      
+    }
+      if (dia>=1 && dia<=21) {
+					printf("\n Você é de Cancer");
+				} else if (dia>=1 && dia>=22)		
+					printf("\n Você é de Leao"); 
+				else {
+					printf("\n Dia invalido.");
+				}
+									
+				break;
+				
+	}
+  switch (mes) {
+		case 8: if (mes == 8) {
+      
+    }
+      if (dia>=1 && dia<=22) {
+					printf("\n Você é de Leao");
+				} else if (dia>=1 && dia>=23)		
+					printf("\n Você é de Virgem"); 
+				else {
+					printf("\n Dia invalido.");
+				}
+									
+				break;
+				
+	}
+	switch (mes) {
+		case 9: if (mes == 9) {
+      
+    }
+      if (dia>=1 && dia<=22) {
+					printf("\n Você é de Virgem");
+				} else if (dia>=1 && dia>=23)		
+					printf("\n Você é de Libra"); 
+				else {
+					printf("\n Dia invalido.");
+				}
+									
+				break;
+				
+	}
+	switch (mes) {
+		case 10: if (mes == 10) {
+      
+    }
+      if (dia>=1 && dia<=22) {
+					printf("\n Você é de Libra");
+				} else if (dia>=1 && dia>=23)		
+					printf("\n Você é de Escorpiao"); 
+				else {
+					printf("\n Dia invalido.");
+				}
+									
+				break;
+				
+	}
+  switch (mes) {
+		case 11: if (mes == 11) {
+      
+    }
+      if (dia>=1 && dia<=21) {
+					printf("\n Você é de Escorpiao");
+				} else if (dia>=1 && dia>=22)		
+					printf("\n Você é de Sagitario"); 
+				else {
+					printf("\n Dia invalido.");
+				}
+									
+				break;
+				
+	}
+  switch (mes) {
+		case 12: if (mes == 12) {
+      
+    }
+      if (dia>=1 && dia<=21) {
+					printf("\n Você é de Sagitario");
+				} else if (dia>=1 && dia>=22)		
+					printf("\n Você é de Capricornio"); 
+				else {
+					printf("\n Dia invalido.");
+				}
+									
+				break;
+				
+	}
+}
+
+
+
+
+
+
+                                                         THE END ^^

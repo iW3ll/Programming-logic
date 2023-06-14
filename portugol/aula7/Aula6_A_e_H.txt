@@ -1,0 +1,56 @@
+------------------------------------A----------
+programa {
+    /*
+	Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                           
+    Data de entrega: 13/05/2022
+				
+	Enunciado: a) Um número é par?
+    */
+	funcao inicio() {
+	    //Variaveis
+		inteiro n1
+		logico cal
+		
+		//Dados
+		escreva("Digite um número?: ")
+		leia(n1)
+		
+		//Computação
+		cal = (n1 % 2 == 0)
+		
+		//resultado
+		escreva("Um número é par? ",cal)
+	}
+}
+
+
+-------------------------------------H---------------
+
+programa {
+    /*
+    Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                           
+    Data de entrega: 13/05/2022
+				
+	Enunciado: h) Um número b qualquer é o menorentre os números a, b, c?
+    */
+	funcao inicio() {
+		//variaveis
+		inteiro a, b, c
+		logico result
+		
+		//Dados
+		escreva("Digite um número a: ")
+		leia(a)
+		escreva("Digite um número b: ")
+		leia(b)
+		escreva("Digite um número c: ")
+		leia(c)
+		
+		//Computação
+		result = (b < a) e (b < c)
+		
+		//Resultado
+		escreva("Um número b qualquer é o menor entre os números a, b, c?: ",result)
+		
+	}
+}

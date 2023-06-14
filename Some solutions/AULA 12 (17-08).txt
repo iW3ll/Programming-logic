@@ -1,0 +1,180 @@
+LOGICA DE PROGRAMAÇÃO
+
+
+AULA 12 -  17/08/2022
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/*
+Autor: Marco Silva
+
+Exemplo 1
+Desenvolva um programa que receba um conjunto de notas de uma
+turma e informe a quantidade de estudantes aprovados,
+considerando nota de aprovação maior ou igual à 7,0. Uma nota
+negativa encerra a sequência de notas.
+
+*/
+
+
+int main()
+{
+int cont, aprv; 
+float notas;
+
+cont = 1;
+aprv = 0;
+  
+do
+{
+  printf("Informe a nota[%i]: ",cont);
+  scanf("%f", &notas);
+  if(notas >= 7)
+  {
+    aprv ++;
+  }  
+
+  
+  cont = cont +1;
+  
+}while (notas >= 0);
+printf("\nA quantidade de alunos aprovados eh %i",aprv);
+  
+printf("\n\n\nPrograma encerrado!!");
+
+
+return 0;
+}
+
+
+
+
+
+****************************************** EXEMPLO 2 ********************************************
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/*
+Autor: Marco Silva
+
+Exemplo 2
+Desenvolva um programa que receba um conjunto de notas de uma
+turma e informe a média de turma. A digitação de notas é encerrada
+mediante questionamento ao usuário e deve-se assegurar que
+somente notas válidas (0 à 10) serão informadas.
+
+*/
+
+
+int main()
+{
+int cont, resp,contN; 
+float nota,somaN, med;
+
+cont = 1;
+somaN = 0;
+contN = 0;  
+do
+{
+  do
+  {
+  printf("\nInforme a nota[%i]: ",cont);
+  scanf("%f", &nota);
+
+   if(nota<0 || nota>10)
+     {
+       printf("\n%.2f fora do intervalo 0..10\n",nota);
+     }
+  }while( !(nota>=0 && nota<=10) );
+
+  somaN = somaN + nota;
+  contN = contN +1;
+    
+  printf("Dejesa continuar [1=Sim; 0=Nao] ? ");
+  scanf("%i",&resp);
+
+  cont=cont+1;
+  
+}while (resp == 1);
+
+med = 0;
+if(contN > 0)
+{
+  med = somaN/contN;
+}
+printf("\nA media da turma eh = %f ",med);
+printf("\n\n\nPrograma encerrado!!");
+
+return 0;
+}
+
+
+
+******************************************* EXEMPLO 3 *************************************************
+
+#include <stdio.h>
+#include <string.h>
+
+/*
+Autor: Marco Silva
+
+Exemplo 3
+Desenvolva um programa que receba nome e idade de um conjunto
+de pessoas e informe nome e idade da pessoa mais jovem. A idade
+deve ser validada (somente idades positivas são aceitas). A sequência
+de dados se encerra mediante questionamento ao usuário
+
+*/
+
+
+int main()
+{
+int resp,idade,cont,idJov;
+char name[100],nameJ[100];  
+
+ resp = 1;
+ cont = 1;
+
+while(resp==1)
+{
+ printf("\nInforme o nome[%i]: ",cont);
+ scanf("%[^\n]s",name);
+
+ printf("Informe a idade[%i]: ",cont);
+ scanf("%i",&idade);
+
+while(idade<=0)
+{
+ printf("Informe a idade[%i]: ",cont);
+ scanf("%i",&idade);
+}  
+
+// descobrir o mais jovem
+ if(cont == 1)
+ {
+   idJov = idade;
+   strcpy(nameJ,name);
+ }  
+  else if(idade < idJov)
+  {
+    idJov = idade;
+    strcpy(nameJ,name);
+  }
+  
+ cont = cont +1; 
+  
+ printf("Continua digitacao [1=Sim;0=Nao]? ");
+ scanf("%i",&resp); getchar();
+}  
+printf("\nO mais jovem eh = %s ",nameJ);
+printf("\nA idade do mais jovem eh = %i ",idJov);  
+
+printf("\n\nPrograma encerrado!!");
+
+}
+

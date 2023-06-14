@@ -1,0 +1,50 @@
+programa {
+    /*Autor: Wesley
+    Questão 4: Dado nomes e notas de três estudantes deve-se exibir nome e notas dos
+estudantes na ordem decrescente de nota da maior para a menor todo 
+processamento só deve ocorrer com todas as notas válidas (valores não
+negativos).
+    */
+	funcao inicio() {
+		//Variaveis
+		cadeia nome1, nome2, nome3
+		real nota1, nota2, nota3
+		logico result
+
+		
+		//Dados
+		escreva("Digite o nome do estudante 1: ")
+		leia(nome1)
+		escreva("Digite a nota do estudante 1: ")
+		leia(nota1)
+		escreva("Digite o nome do estudante 2: ")
+		leia(nome2)
+		escreva("Digite a nota do estudante 2 ")
+		leia(nota2)
+		escreva("Digite o nome do estudante 3: ")
+		leia(nome3)
+		escreva("Digite a nota do estudante 3: ")
+		leia(nota3)
+		
+        
+		se (nota1 > nota2 e nota2 > nota3) {
+		    escreva(nome1, " = " ,nota1,\n nome2, " = ",nota2 \n,nome3, " = ",nota3)
+		}
+		se (nota1 > nota3 e nota3 > nota2) {
+		    escreva(nota1, nota3, nota2)
+		}
+		se (nota2 > nota1 e nota1 > nota3) {
+		    escreva(nota3, nota1, nota2)
+	    }
+	    se (nota3 > nota2 e nota2 > nota1){
+		    escreva(nota3, nota2, nota1)
+	    }
+		   
+		 
+		    
+		
+		 
+		
+		
+	}
+}

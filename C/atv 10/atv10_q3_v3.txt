@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+/*
+Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                           
+   Data de entrega: 24/07/22
+enunciado 3) Dados três notas, o total de aulas ministradas, e o número de faltas de um aluno em uma
+disciplina qualquer verificar a sua situação final: aprovado, reprovado por falta ou
+reprovado por média. A média para aprovação é informada e o limite de faltas é 25% do
+total de aulas ministradas. A reprovação por falta sobrepõe a reprovação por média, ou
+seja, se reprovado por falta não tem mais relevância a média das notas.
+*/
+int main(){
+//declarção de variaveis
+	int n1,n2,n3,m,ngeral;
+	float faltas,aulas,mfaltas;
+//entrada de dados
+	printf("Informe a primeira nota:");
+	scanf("%d", &n1);	
+	printf("Informe a segunda nota:");
+	scanf("%d", &n2);
+	printf("Informe a terceira nota:");
+	scanf("%d", &n3);
+	printf("Informe a media para passar direto:");
+	scanf("%d", &m);
+	printf("Informe o total de aulas ministradas:");
+	scanf("%f", &aulas);
+	printf("Informe o numero de faltas:");
+	scanf("%f", &faltas);
+
+//Computação
+	ngeral = n1+n2+n3;
+	mfaltas = faltas/aulas;
+	if ((ngeral/3 >= m) && mfaltas > 0.25 )
+	{
+		printf("O aluno foi reprovado por falta.");
+	}
+	else
+	if ((ngeral/3 >= m) && mfaltas <= 0.25)
+	{
+		printf("O aluno foi aprovado.");
+	}
+	else
+	if ((ngeral/3 < m))
+	{
+		printf("O aluno foi reprovado por media.");
+	}
+
+	}

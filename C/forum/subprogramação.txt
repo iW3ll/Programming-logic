@@ -1,0 +1,24 @@
+ATIVIDADE-13: Conceitos de subprogramação
+Neste fórum será discutido conceitos importantes em subprogramação. Para realização da atividade o estudante deverá responder as perguntas propostas:
+
+1) Qual a relação do tema subprogramação com o paradigma de projeto de algoritmos "divisão e conquista" ?
+
+A relação é que a subprogramação ela precisa ser separada do programa principal ou seja, precisa dividir em varias partes menores para obter a solução do problema principal.
+
+2) O que são subprogramas e o que se pode dizer sobre o subprograma tipo função  e tipo subrotina ?
+
+Subprogramas são pequenos blocos ligado ao programa principal que aceita dados, realiza alguns calculos, devolve resultados e aciona outros subprogramas. 
+subprograma tipo de função é quando o subprograma retorna um valor ou seja ele precisa de um argumento pra retornar esse valor 
+subprograma tipo subrotina é quando o subprograma não recebe argumentos, pode retornar varios valores ou nenhum.
+
+IMPORTANTE:
+Nesta atividade, além da participação será avaliado o conteúdo postado.
+
+
+O que são subprogramas e o que se pode dizer sobre o subprograma tipo função  e tipo subrotina ?
+
+
+
+subprogramaçao 
+
+Qual a relação do tema subprogramação com o paradigma de projeto de algoritmos "divisão e conquista" ?

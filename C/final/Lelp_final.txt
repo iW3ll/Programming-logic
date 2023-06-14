@@ -1,0 +1,19 @@
+
+1. Construa um programa que mostre a quantidade de números bissextos contidos no intervalo fechado [a,b], 
+onde  a, b são números inteiros quaisquer informados pelo usuário. Deve-se assegurar que a e b sejam positivos, e a menor que b.
+
+2. Desenvolver um programa para receber um conjunto de nomes e notas, onde a quantidade de itens (nome, nota) não pode ultrapassar n 
+(onde n é um número qualquer obrigatoriamente maior que 20). Contudo, o usuário pode encerrar a digitação a qualquer momento. Ao final,
+ o programa deve exibir nome associado à menor nota e a média das seis primeiras notas.
+
+3. Desenvolver um programa para receber três valores a,b,c quaisquer para os lados de um triângulo, assegurando-se que sejam valores positivos. 
+ Em seguida deve-se verificar se os valores formam ou não um triângulo. Em sendo um triangulo, deve-se fixar o lado (c) e realizar decrementos neste lado de um valor
+ x fornecido pelo usuário. A cada decremento deve-se verificar a condição de existência de triangulo. Nestas condições, o programa deve exibir quantos triângulos
+ são formados seguindo o procedimento de decremento. Por exemplo, para a=5,b=4,c=3 fixando (c) com decremento x=0.5 são contados 4 triângulos válidos.
+
+Esta questão deve ser resolvida seguindo paradigma “divisão e conquista”, onde cada subproblema deverá ter seu subprograma correspondente, 
+inclusive a entrada de dados e exibição de resultados. Além disso, o uso de variáveis globais não é permitido na resolução.
+ O não cumprimento de uma desses requisitos anula a questão.
+
+4.Construa um programa que receba a idade de quarenta pessoas e exiba a quantidade de pessoas que estão abaixo da média de idades do grupo. - Feita
+

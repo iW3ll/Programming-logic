@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+  /*
+	Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                           
+    Data de entrega: 24/05/2022
+				
+	Enunciado: 1) Dado um valor inteiro positivo que represente um montante de segundos converter o montante para o formato hh:mm:ss.
+  */
+
+int main(void) {
+  
+    int seg, h, m, s, resto;
+
+    printf("Digite um montante de segundos: ");
+    scanf("%d", &seg);
+    
+    h = seg / 3600;
+    resto = seg % 3600;
+    m = resto / 60;
+    s = resto % 60;
+    printf("%dh:%dm:%ds\n", h, m, s);
+  
+  return 0;
+}

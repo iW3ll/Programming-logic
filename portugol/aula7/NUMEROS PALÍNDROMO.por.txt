@@ -1,0 +1,44 @@
+
+/* Equipe 5: Ronald Nepomuceno, Eveny Neves, Vilmar Pereira, Claúdio Crisóstomo e Wesley Luiz.
+
+ Enunciado: Dado um número inteiro positivo qualquer, verificar se ele possui cinco dígitos. Em 
+caso afirmativo, decidir se esse número é palíndromo ímpar (número palíndromo é 
+aquele que é igual quando lido nas duas direções: esquerda-direira ou direita-
+esquerda). Exemplos de números palíndromos impares: 98589, 73137 e 10801.
+Data de entrega: 20/05/2022.
+*/
+programa
+{
+
+funcao inicio()
+{
+  //Declaração de variáveis
+  
+  inteiro num,aux,reverso                                       
+
+  //Entrada de dados     
+
+  escreva("Digite um Número: \n")
+  leia(num)
+
+  //Computação
+  
+  aux = num
+  reverso = 0
+
+  enquanto (aux != 0) 
+  {
+    reverso = reverso * 10 + aux % 10  
+    aux = aux / 10                    
+  }
+
+
+  //Resultados
+  
+  se ((reverso == num) e (num % 2 == 1))
+    escreva(num," é' palíndroma\n")
+  senao
+    escreva(num, "não é' palíndroma\n")
+
+}
+}

@@ -1,0 +1,55 @@
+﻿#include <stdio.h>
+#include <math.h>
+
+int main() {
+  /*Equipe 5: Ronald Nepomuceno, Eveny Neves, Vilmar Pereira, Claúdio Crisóstomo e Wesley Luiz
+Data de entrega: 24/05/2022
+
+Enunciado 5) Selecionar em livros ou pesquisar na Internet uma questão versando sobre
+conteúdo do Ensino Médio e apresentar o algoritmo computacional contendo
+entrada de dados, computação e resultado. A questão escolhida deve ser distinta
+entre todas apresentadas.
+
+Um programa que solucione equações do tipo f(x) = ax^2+bx+c para a,b e c sendo números inteiros quaisquer.
+    */
+
+  //variaveis
+int a, b, c, delt, x1, x2;
+
+  //entrada de dados
+   printf(" \nPara f(x) = ax² + bx + c\n");
+    printf("\nInforme um valor inteiro para a: "); 
+  scanf("%i", &a);
+    printf("\nInforme um valor inteiro para b: "); 
+  scanf("%i", &b);
+    printf("\nInforme um valor inteiro para c: "); 
+  scanf("%i", &c);
+
+  //Computaçao //Resultados
+
+  delt = (b*b - 4 * a * c);
+  
+  if(delt < 0)
+    
+  {
+    printf("\nA equação não possui raizes reais.");
+  }
+  else
+  {
+    if (delt == 0)
+    {
+      x1 = -b / (2 * a);
+      printf("Delta igual = 0.\nX1 =""%i",x1);
+    }
+    else
+    {
+      x1 = (-b + sqrt(delt)) / (2 * a);
+      x2 = (-b - sqrt(delt)) / (2 * a);
+      printf("\nRESULTADOS\n");
+      printf("x1 = ""%i\n",x1);
+      printf("x2 = ""%i\n",x2);
+      
+    }
+  }
+  return 0;
+}

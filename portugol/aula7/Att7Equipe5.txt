@@ -1,0 +1,382 @@
+﻿---------------------------------------------------------------------------------------------------------------------------------------------
+programa
+{
+	/*Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz
+	 * Data:20/05/2022
+	 * 
+	 * Enunciado 1) Desenvolva um algoritmo computacional que faça 5 perguntas para uma pessoa
+	sobre um crime. As perguntas sao:
+	a. "Telefonou para a vItima?"
+	b. "Devia dinheiro para a vitima?"
+	c. "Esteve no local do crime?"
+	d. "Mora perto da vitima?"
+	e. "Já trabalhou com a vitima?"
+	O programa deve no final emitir uma classificao sobre a participacão da pessoa
+	no crime. Se a pessoa responder positivamente a duas questÃµes ela deve ser
+	classificada como "Suspeita", entre três e quatro como "Cumplice" e cinco como
+	"Assassino". Caso contrario, ele será classificado como "Inocente".
+	 */
+
+	
+	funcao inicio()
+	{
+                //variaveis
+		inteiro telefone,devia,local,perto,trabalho,laudo
+
+		//entrada de dados
+		escreva("\n Investigação do crime: ( RESPONDA  SIM:1 ou NÃO: 0) \nVamos Começar!\n\n")
+
+		escreva("\n Telefonou para a vitima?\n ")
+		leia(telefone)
+
+		escreva("\n Devia dinheiro para a vitima?\n ")
+		leia(devia)
+				
+		escreva("\n Esteve no local do crime?\n ")
+		leia(local)
+			
+		escreva("\n Mora perto da vitima?\n ")
+		leia(perto)
+
+		escreva("\n Ja trabalhou com a vitima?\n ")
+		leia(trabalho)
+
+
+                //computação  //resultados
+		laudo=telefone+devia+local+perto+trabalho
+
+		
+se (telefone !=1 ou devia !=1 ou local !=1 ou perto !=1 ou trabalho !=1 ou telefone !=0 ou devia !=0 ou local !=0 ou perto !=0 ou trabalho !=0) {
+		
+	
+
+			escreva("\n RESPONDA APENAS SIM: 1 OU NAO:0 \n")
+			escreva("\n TENTE NOVAMENTE! \n")
+		
+}
+
+senao{
+		
+		se (laudo <=1){
+
+			escreva("\n Você é INOCENTE!\n")
+			escreva("\n Você é respondeu sim para:",laudo,"/5 \n")
+		}
+		
+		se (laudo == 2){
+
+			escreva("\n Você é SUSPEITO do crime!\n")
+			escreva("\n Você é respondeu sim para:",laudo,"/5 \n")
+		}
+
+		se (laudo == 3 ou laudo==4){
+
+			escreva("\n  Você é CUMPLICE do crime!\n")
+			escreva("\n  Você é respondeu sim para:",laudo,"/5 \n")
+		}
+
+		se (laudo == 5){
+
+			escreva("\n  Você é CULPADO do crime!\n")
+			escreva("\n  Você é respondeu sim para:",laudo,"/5 \n")
+		}
+		
+		
+}
+		
+	}
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+programa{
+/*
+ * Equipe 5: Ronald Nepomuceno, Eveny Neves, Vilmar Pereira, Claúdio Crisóstomo e Wesley Luiz. 
+ Data de entrega: 20/05/2022
+ 
+ Enunciado 2) Dado um número inteiro positivo qualquer, verificar se ele possui cinco dígitos. Em
+caso afirmativo, decidir se esse número é palíndromo ímpar (número palíndromo é
+aquele que é igual quando lido nas duas direções: esquerda-direira ou direitaesquerda). Exemplos de números palíndromos impares: 98589, 73137 e 10801.
+ */
+
+
+    funcao inicio()
+	{
+        // Declaração de variaveis
+
+        inteiro vl, inv, unida, dezen, centen ,umilhao, dmilhao
+        inteiro num, dv
+        logico aux
+
+        // Entrada da dados
+
+        escreva("Digite 1 numero positivo que tenha 5 digitos: \n")
+        leia(vl)
+
+        // Computação
+
+        dv = vl / 10000
+        aux = (dv >= 1) e (dv <= 9)
+
+        se(aux)
+        {
+        unida = vl % 10
+        dezen = (vl % 100) / 10
+        centen = (vl % 1000) / 100
+        umilhao = (vl % 10000) / 1000
+        dmilhao = vl / 10000
+        num = unida * 10000 + centen *  100 + dezen * 1000  + umilhao * 10 + dmilhao
+
+         // Resultados
+         se ((vl == num) e (num % 2 == 1))
+         escreva ("o numero e palindromo é impar\n")
+        
+		  senao se ((vl != num) e (num % 2 != 1))
+         escreva("Não é palidroma e não é impar\n")
+        
+		  senao se((vl != num) ou (num % 2 != 1))
+         escreva("Não é palidroma ou não é impar\n")
+         
+		 senao
+		 {
+			escreva("\n O número não tem cinco dígitos \n")
+		 }
+		}
+	}
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+programa {
+    /*	Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                           
+                Data de entrega: 20/05/2022
+         
+	  	Enunciado 3) Dados os três valores 𝑎, 𝑏, 𝑐 quaisquer para os lados de um triângulo. Uma vez 
+                     que esses valores sejam positivos, verificar se os mesmos formam realmente um 
+                     triângulo, e se essa condição for verdadeira, indicar qual o tipo do triângulo: 
+                     isósceles, escaleno, equilátero. E no caso de ser triangulo escaleno informar se é 
+                     retângulo ou não.
+                     
+    */
+	funcao inicio() {
+	    //variaveis
+	    inteiro a=0
+	    inteiro b=0  
+	    inteiro c=0 
+	    
+	    logico result, result1, result2
+	    logico triangulo, isosceles, equilatero, escaleno, retangulo
+	    
+	    
+	    
+	    
+	    //entrada de dados
+	    escreva("\nDigite o valor de (a)!: ")
+	    leia(a)
+	    escreva("\nDigite o valor de (b)!: ")
+	    leia(b)
+	    escreva("\nDigite o valor de (c)!: ")
+	    leia(c)
+	    
+	    //computação
+	 result = a>=0
+	 result1 = b>=0
+	 result2 = c>=0
+	 triangulo = (a+b>c) e (a+c>b)  e (b+c>a) 
+	 isosceles = (a==b ) ou (a==c)  ou (b==c)   
+	 equilatero = a==b e b==c
+      escaleno = (a!=b) e (b!=c) e (a!=c)
+      retangulo  = ((a*a) + (b*b) == c*c) ou ((a*a) + (c*c) == b*b) ou ((b*b) + (c*c) == a*a) 
+	 
+      //verificação e resultado
+      
+	 se (nao result  ){
+	 	escreva("\n(A) não é positivo!!....")
+	        }
+	     se ( nao result1){
+	   	escreva("\n(B) não é positivo!!....")
+	        }
+	     se ( nao result2){
+	     	escreva("\n(C) não é positivo!!....")
+	        }
+	     
+	                  se ( triangulo==verdadeiro){}senao{
+	 	                 escreva("não é um triangulo")}
+	        
+	                      se ( isosceles e triangulo){
+	   	                 escreva(" é um triangulo isosceles  ")}
+	                      se (equilatero e triangulo){
+	       	            escreva("é  (equilatero)\n")}
+	                      se (escaleno e retangulo){
+	                      	escreva ("escaleno retangulo")}senao{escreva("é um triangulo escaleno (não) retangulo")}
+	                      
+	       
+	       
+	   
+	    	
+	    
+
+	 
+	}
+
+}
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+programa {
+    
+    /*
+	Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                           
+    Data de entrega: 20/05/2022
+				
+	Enunciado 4) Dado nomes e notas de três estudantes deve-se exibir nome e notas dos
+    estudantes na ordem decrescente de nota (da maior para a menor) todo 
+    processamento só deve ocorrer com todas as notas válidas (valores não
+    negativos).
+    */
+ 
+	funcao inicio() {
+		//Variaveis
+		cadeia nome1, nome2, nome3
+		real nota1, nota2, nota3
+	
+
+		
+		//Dados
+		escreva("Digite o nome do estudante 1: ")
+		leia(nome1)
+		escreva("Digite a nota do estudante 1: ")
+		leia(nota1)
+		escreva("Digite o nome do estudante 2: ")
+		leia(nome2)
+		escreva("Digite a nota do estudante 2 ")
+		leia(nota2)
+		escreva("Digite o nome do estudante 3: ")
+		leia(nome3)
+		escreva("Digite a nota do estudante 3: ")
+		leia(nota3)
+		
+        //Computação E Resultados
+		se (nota1 > nota2 e nota2 > nota3) {
+		    escreva(nome1, " = " ,nota1,"\n",nome2, " = " ,nota2,"\n",nome3 , " = ",nota3)
+		}
+		senao se (nota1 > nota3 e nota3 > nota2) {
+		    escreva(nome1, " = " ,nota1,"\n",nome3 , " = ",nota3,"\n",nome2, " = " ,nota2)
+		}
+		senao se (nota2 > nota3 e nota3 > nota2) {
+		    escreva(nome2, " = " ,nota2,"\n",nome3 , " = ",nota3,"\n",nome1, " = " ,nota1)
+	    }
+	    senao se (nota2 > nota1 e nota1 > nota3){
+		    escreva(nome2, " = " ,nota2,"\n",nome1 , " = ",nota1,"\n",nome3, " = " ,nota3)
+	    }
+		senao se (nota3 > nota2 e nota2 > nota1){
+		    escreva(nome3, " = " ,nota3,"\n",nome2 , " = ",nota2,"\n",nome1, " = " ,nota1)
+	    } 
+		senao se (nota3 > nota1 e nota1 > nota2){
+		    escreva(nome3, " = " ,nota3,"\n",nome1 , " = ",nota1,"\n",nome2, " = " ,nota2)
+	    }
+		senao {
+		    escreva("Existe Um Valor Negativo, Tente Novamente")
+		}    
+		
+		
+	}
+}
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+programa {
+	
+	funcao inicio() {
+	/*Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz
+	 * Data:20/05/2022
+	 * Enunciado 5) Dado o ano de nascimento de quatro pessoas encontre a média das idades das
+pessoas nascidas em ano bissexto.
+	 * 
+	 */
+
+		 //variaveis
+	 inteiro ano, a1, a2, a3, a4, m, anobi, ab1, ab2, ab3, ab4
+	 inteiro id1, id2, id3, id4, idade1, idade2, idade3, idade4
+
+	 //entrada de dados
+	 escreva("Informe o ano da data de hoje: ")
+	 leia(ano)
+	 
+	 escreva("Informe o ano de nascimento 1: ")
+	 leia(a1)
+
+	 escreva("Informe o ano de nascimento 2: ")
+	 leia(a2)
+
+	 escreva("Informe o ano de nascimento 3: ")
+	 leia(a3)
+
+	 escreva("Informe o ano de nascimento 4: ")
+	 leia(a4)
+
+ //coputaçao //resultados
+	 id1 = (ano - a1)
+	 id2 = (ano - a2)
+	 id3 = (ano - a3)
+	 id4 = (ano - a4)
+
+	 se ((a1 % 4 == 0) ou (a1 % 400 == 0)) {
+	 escreva("\nO ano ",a1," é bissexto.\n ")
+	 idade1 = id1
+	 ab1 = 1
+	 }
+	 senao 
+	 {
+	 	escreva("\nO ano ",a1," não é bissexto.\n ")
+	 	idade1 = 0
+	 	ab1 = 0
+	 }
+	  se ((a2 % 4 == 0) ou (a2 % 400 == 0)) {
+	 escreva("\nO ano ",a2," é bissexto.\n ")
+	 idade2 = id2
+	  ab2 = 1
+	 }
+	 senao 
+	 {
+	 	escreva("\nO ano ",a2," não é bissexto.\n ")
+	 	idade2 = 0
+	 	ab2 = 0
+	 }
+	  se ((a3 % 4 == 0) ou (a3 % 400 == 0)) {
+	 escreva("\nO ano ",a3," é bissexto.\n ")
+	 idade3 = id3
+	  ab3 = 1
+	 }
+	 senao 
+	 {
+	 	escreva("\nO ano ",a3," não é bissexto.\n ")
+	 	idade3 = 0
+	 	ab3 = 0
+	 }
+	  se ((a4 % 4 == 0) ou (a4 % 400 == 0)) {
+	 escreva("\nO ano ",a4," é bissexto.\n ")
+	 idade4 = id4
+	  ab4 = 1
+	 }
+	 senao 
+	 {
+	 	escreva("\nO ano ",a4," não é bissexto.\n ")
+	 	idade4 = 0
+	 	ab4 = 0
+	 }
+	 anobi = (ab1+ab2+ab3+ab4)
+      m = (idade1+idade2+idade3+idade4) / anobi
+	 escreva("\nE a média da idade das pessoas nascidas em ano bissexto é ",m,".\n ")
+
+	 
+	 }
+	
+}

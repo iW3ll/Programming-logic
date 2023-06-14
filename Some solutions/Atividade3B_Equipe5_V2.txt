@@ -1,0 +1,360 @@
+﻿programa
+{
+	
+	/*	Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                           
+                Data de entrega: 03/05/2022
+         
+	  	Enunciado1: Agnaldo pagou 30% de uma dívida de R$ 900,00 e dividiu o restante em 5 parcelas
+		iguais. Qual é o valor que Agnaldo vai pagar em cada parcela?
+    */
+	
+	funcao inicio()
+	{
+		
+		//declaração variavel
+		real divida, parcela, porcen,valor_p, conta
+		inteiro resto,v_parcela
+		
+		//entrada de dados
+		escreva("\n Digite o valor da divida:\n ")
+		leia(divida)
+		
+		escreva("\n Digite a porcentagem que vai pagar:\n ")
+		leia(porcen)
+
+		escreva("\nDigite a quantidade de parcelas\n:")
+		leia(parcela)
+		
+		//computação
+		conta=(divida/100)
+		valor_p=conta*porcen
+		resto=divida-valor_p
+		v_parcela=resto/parcela
+		
+		//resultado
+		escreva("\nValor de cada parcela é:\n",v_parcela)
+		
+	}
+}
+
+
+
+_____________________________________________________________________________________________________________________________________________
+programa
+{
+/*
+Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                           
+Data de entrega: 03/05/2022
+
+Enunciado2: Sabe-se que o lucro de uma empresa foi dividido entre os dois sócios de forma
+proporcional. O sócio cujo investimento inicial foi de 2/5, recebeu R$ 5000. Quanto
+o outro recebeu? Qual foi o lucro da empresa?
+*/
+
+    funcao inicio()
+    {
+    //declaração variavel
+		inteiro lucro,inv_a,inv_b
+	
+	//entrada de dados
+        inv_a= 5000 /*< colocar variavel*/
+        
+	//computação
+	inv_b= inv_a+(inv_a/2)
+
+        lucro= (inv_a+inv_b)
+
+	
+	//resultado
+        escreva("O segundo investidor recebeu: \n ",inv_b, " reais")
+
+          escreva(" \n O lucro total desta empresa foi de: \n",lucro)
+    }
+}
+
+
+__________________________________________________________________________________________________________________________________________
+
+programa
+{
+/*
+Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                           
+Data de entrega: 03/05/2022
+
+Enunciado3: Dados uma distância em km, o preço da gasolina em reais, e a autonomia do carro
+por litro (autonomia é quantidade de quilômetros que o carro faz por litro), devese mostrar 
+quantos litros de gasolina um carro irá consumir e quanto será gasto em
+reais. 
+
+*/
+programa
+{
+    funcao inicio()
+    {
+    
+    //declaração variavel
+
+	real dist,precoh,autonomiah, tot_gast, l
+
+    //entrada de dados
+
+        escreva("Informe a distância em quilômetros:  \n")
+        leia(dist)
+
+        escreva("Informe  o valore da gasolina em reais: \n")
+        leia(precoh)
+
+        escreva("Informe  a autonomia: \n")
+        leia(autonomiah)
+
+      //computação
+        l= (dist/autonomiah)
+        tot_gast= (l*precoh)
+
+     //resultado
+
+          escreva("A quantidade de litros consumido pelo carro é: ",l, " litros  \n  e o consumo da gasolina é: ",tot_gast, " reais")
+
+    }
+}
+
+
+________________________________________________________________________________________________________________________________
+
+programa
+{
+	
+	funcao inicio()
+	{
+	     
+	     /* Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                           
+               Data de entrega: 03/05/2022
+             Enunciado4: Dado um valor inteiro positivo que represente um montante de segundos, 
+             converter o montante para o formato hh:mm:ss.
+ */
+
+		//declaração de variaveis
+        inteiro numeros
+		inteiro hora
+		inteiro minutos
+		inteiro segundos
+		inteiro resto
+		
+
+		
+		//entrada de dados
+		escreva("informe o numero a ser convertido e Horas: ")
+		leia(numeros)
+
+		//computação
+		hora = numeros/36
+		resto = numeros % 36
+		minutos = resto/6
+		segundos = resto % 6
+
+        //exibição dos dados
+         escreva("\n[ ",hora,":",minutos,":",segundos," ]\n") 
+         
+
+
+	
+		
+	}
+}
+
+
+_____________________________________________________________________________________________________________________
+
+
+programa
+{
+	
+	funcao inicio()
+	{
+	     	//refazer
+
+	     /* Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                           
+                Data de entrega: 03/05/2022
+                Enunciado5: Um foguete é lançado formando com o solo um ângulo α. Depois de percorrer 𝑥
+                metros em linha reta determine a altura que o foguete se encontra.  
+*/
+	     
+	     //declaração de variaves
+	     
+	     real angulo, distancia_metros
+	     real radiano , seno_altura
+	     real resultado
+	     
+
+          //entrada de dados
+          escreva("digite o angulo ex:( 30,45,60 )\n")
+          leia(angulo)
+	     escreva("digite quantos metros o foguete percorreu:\n ")
+	     leia(distancia_metros)
+        
+         //computação
+         radiano = angulo*3.1415/180
+         seno_altura = m.seno(radiano)
+         resultado = seno_altura*distancia_metros
+             
+
+
+
+
+
+
+
+
+          //resultados
+
+	     escreva("resultado é....\n", resultado)
+	  
+	     
+	}
+}
+
+
+
+______________________________________________________________________________________________________________________
+
+programa
+{
+	
+	/*	Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                       
+                Data de entrega:03/05/2022
+	 * 	
+	 * 	Enunciado6: Após fazer 80 arremessos à cesta, Marcelinho constatou que acertou 70% deles.
+		Após fazer mais 20 arremessos, ele melhorou seu percentual de acertos para 71%
+		do total de arremessos. Dos últimos 20 arremessos, quantos arremessos
+		Marcelinho errou?
+	*/
+	
+	funcao inicio()
+	{	
+		//variaveis
+		real arremessos, acertos, n_acertos,n_arremessos
+		real conta,conta2, porcen_1,porcen_2, sub_t, resultado
+		
+		//entrada de dados
+		
+		escreva("\n Digite o numero de arremessos feitos:")
+		leia(arremessos)
+		
+		escreva("\n Digite a porcetagem de acertos:")
+		leia(porcen_1)
+
+		escreva("\n Digite a quantidade de novos arremessos:")
+		leia(n_arremessos)
+
+		escreva ("\n Digite porcentagem dos total arremessos:")
+		leia(porcen_2)
+
+		//computação
+
+		//Numero de acertos1
+		
+		conta=(arremessos/100)
+		acertos=conta*porcen_1
+		
+		//Numero de acertos2
+		
+		conta2=(n_arremessos+arremessos)/100
+		n_acertos=conta2*porcen_2
+		
+		//Numero de erros novos arremessos
+		
+		sub_t= n_acertos-acertos
+		resultado=n_arremessos-sub_t
+
+		//Saida de dados
+		
+
+		escreva("\n Numero de erros dos novos arremessos:\n\n",resultado," erros!\n")
+		
+		
+	}
+}
+
+
+___________________________________________________________________________________________________________________________
+
+programa
+{
+/*Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                       
+  Data de entrega:03/05/2022
+
+ Enunciado7: Certa empresa selecionou 150 candidatos para uma entrevista, visando o
+preenchimento de algumas vagas. Dos candidatos selecionados, 10% não
+compareceram à entrevista, e 20% dos que compareceram foram contratados.
+Qual o percentual de candidatos contratados em relação ao total selecionados?
+
+ 
+ */
+	
+	funcao inicio() {
+
+	//Declaração de variaveis
+	real elegidos, faltaram, compareceram, contratados, porcent_ContratTotal
+	real faltaram_porcent, contratados_porcent
+
+	//Entrada de dados
+	escreva("Quantos candidatos foram selecionados? ")
+	leia(elegidos)
+
+	escreva("Quantos não compareceram?(%) ")
+	leia(faltaram_porcent)
+
+	escreva("Qual a porcentagem dos contratados? ")
+	leia(contratados_porcent)
+
+	//Computação
+	faltaram = elegidos*faltaram_porcent/100
+	compareceram = elegidos-faltaram
+	contratados = compareceram*contratados_porcent/100
+	porcent_ContratTotal = contratados*100/elegidos
+	
+	//Resultado
+	
+	escreva("O percentual de contratados em relação ao total de selecionados é de ",porcent_ContratTotal ,"%. ")
+		
+	}
+}
+
+
+_____________________________________________________________________________________________________________________________
+programa {
+    
+	funcao inicio() {
+/*
+		Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                       
+                Data de entrega:03/05/2022
+                Enunciado8:Para um churrasco promovido por uma empresa, serão comprados exatamente 60
+                kg entre filé e linguiça, gastando no máximo R$ 1.590,00. Se o quilograma de filé
+                custa R$ 30,00 e o quilograma da linguiça R$ 24,00, quantos quilogramas de filé
+                poderão ser comprados ?  
+                      
+*/ 
+		//declaração de variaveis
+	    real kgTot,vFile,vLing,vTot,kgLing,kgFile
+
+		//dados
+		escreva("Informe os quilos totais: " )
+		leia(kgTot)
+		
+		escreva("Informe o preço do file: ")
+		leia(vFile)
+		
+		escreva("Informe o preço da linguiça: ")
+		leia(vLing)
+		
+		escreva("Informe o valo máximo: ")
+		leia(vTot)
+		
+		//computação
+		kgLing= (vTot-vFile*kgTot)/(vLing-vFile)
+		kgFile= kgTot-kgLing
+		
+		//resultados
+		escreva("Quilos de file comprados: ",kgFile)
+	}
+}

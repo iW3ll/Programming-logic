@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+	/*Autor: Claudio Crisostomo
+	  data:24/05/2022
+	  
+	  -Desenvolva um programa que receba um valor em Real (R$) sem os centavos (valor
+	nteiro) e informe quantas notas de 5 R$ ou 2 R$ podem existir no referido valor.
+	
+	*/
+
+int main(){
+	
+	int num,conta5,conta2;
+	
+	printf("\n Digite um valor inteiro em reais que deseja sacar:\n\n");
+	scanf("%i",&num);
+	
+	conta5= num/5;
+	conta2= num/2;
+	
+	printf("\n Voce pode sacar : %i notas de 5 reais?\n\n Ou pode sacar: %i notas de 2 reais?",conta5,conta2);
+	printf("\n Volte sempre!\n");
+	
+	
+	
+	
+	return 0;
+	
+}

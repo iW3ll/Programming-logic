@@ -1,0 +1,152 @@
+==========================================questão_2================================
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/*
+Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno e Wesley Luiz                    
+   Data de entrega: 02/09/22
+
+Desenvolver um programa que preencha dois vetores de inteiros, sendo o vetor A
+com 8 elementos e o vetor B com 18 elementos. Após preenchimento, definir e
+preencher o vetor C de forma que este represente a junção dos vetores A e B.
+Assim, o vetor C deve ter capacidade de armazenar 26 elementos. Concluídos
+preenchimentos dos vetores deve-se exibir os elementos de C. Opcionalmente
+pode-se preencher A e B com valores aleatórios (função de sorteio de números).
+*/
+
+#define tam 8
+#define tam2 18
+
+void preencheVetor(int v1[], int v2[], int n1,int n2)
+{
+  int i;
+  for (i=0;i<n1;i++)
+  {
+    printf("\nA[%i]: ",i+1);
+    scanf("%i",&v1[i]);
+  }
+
+  for(i=0;i<n2;i++)
+  {
+    printf("\nB[%i]: ",i+1);
+    scanf("%i",&v2[i]);
+  }
+}
+
+void juntarVets(int v1[], int v2[],int v3[], int n1,int n2)
+{
+  int i;
+  for(i=0;i<n1;i++)
+  {
+    v3[i]=v1[i];
+  }
+  for(i=0;i<n2;i++)
+  {
+  	v3[i+n1]=v2[i];
+  }
+}
+
+void exibeDados(int v3[],int n1,int n2)
+{
+  int i;
+  for (i=0;i<n1+n2;i++)
+  {
+     printf("\nC[%i]: %i",i+1,v3[i]);
+  }
+}
+
+int main ()
+{
+  int A[tam],B[tam2],C[tam+tam2];
+  
+  preencheVetor(A,B,tam,tam2);
+  juntarVets(A,B,C,tam,tam2);
+  exibeDados(C,tam,tam2);
+}
+
+=============================Questão_3================================================
+
+
+
+#include <stdio.h>
+
+/*
+Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno e Wesley Luiz                    
+   Data de entrega: 02/09/22
+
+Desenvolver um programa que receba o mês (número obrigatoriamente entre 1 e
+12) e preencha um vetor com temperaturas (graus Celsius) para cada dia daquele
+mês. A partir do vetor de temperaturas, o programa deve exibir a média das
+temperaturas do mês, dia mais quente e quantos dias tiveram temperatura acima
+da média. Considerar que a quantidade de temperaturas pode variar de acordo
+com mês entre 28 a 31 valores.
+*/
+
+#define tam 31
+
+int main(){
+
+float T[tam];
+float s,m;
+int mes,n,i,tmaior, quant;
+
+do{
+printf("Informe o mes [1..12]: ");
+scanf("%i",&mes);
+} while ( !(mes>=1 && mes<=12) );
+
+// descobrindo quantidade dias do mes
+switch (mes) {
+case 1:
+case 3:
+case 5:
+case 7:
+case 8:
+case 10:
+case 12:
+n = 31;
+   break;
+case 2:
+   n = 28;
+   break;
+default: n = 30;    
+}
+
+// preencher o vetor de temperaturas
+printf("Temperaturas: \n");
+for (i=0;i<n;i++){
+printf("Dia %i/%i: ",i+1,n);
+scanf("%f",&T[i]);
+}
+
+// calcular a medias das temperaturas
+s = 0;
+for (i=0;i<n;i++){
+s = s+T[i];
+}
+m = s/n;
+//dia mais quente
+tmaior=0;
+for(i=0; i<n; i++)
+{
+if(T[i]>T[tmaior])
+{
+tmaior=i;
+}
+}
+//quantos dias tiveram temperatura acima da média
+
+quant=0;
+for(i=0; i<n; i++)
+{
+	if(T[i]>m)
+	{
+		quant=quant+1;
+	}
+}
+
+printf("\na media = %f\n",m);
+printf("\n O dia mais quente foi o dia: %i\n",tmaior+1);
+printf("\na quantidade de dias com temperatura acima da media = %i\n",quant);
+}

@@ -1,0 +1,82 @@
+#include <stdio.h>
+
+/*Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                    
+   Data de entrega: 02/09/22
+Desenvolva um programa que receba o mês (inteiro de 1 a 12) e o ano (inteiro de
+1 a 2021) e mostre o mês extenso e quantidade de dias do referido mês
+considerando inclusive variação de dias em ano bissexto. Exemplo: Entrada->
+ano=2000, mês=2 ; Saida-> Fevereiro de 2000 com 29 dias.
+  */
+
+int acharM(int meses, int ano){
+
+  switch (meses) {
+		case 1:
+      printf("Janeiro de %i com 31 dias",ano);
+      break;
+		case 2:
+      if (ano % 4 == 0 && ano % 100 != 0 || ano % 400 == 0){
+        printf("Fevereiro de %i com 29 dias",ano);
+      }else
+      printf("Fevereiro de %i com 28 dias", ano);
+      break;
+		case 3:
+      printf("Março de %i com 31 dias",ano);
+      break;
+		case 4:
+      printf("Abril de %i com 30 dias",ano);
+      break;
+		case 5:
+      printf("Maio de %i com 31 dias",ano);
+      break;
+		case 6:
+      printf("Junho de %i com 30 dias",ano);
+      break;
+		case 7:
+      printf("Julho de %i com 31 dias",ano);
+      break;
+    case 8:
+      printf("Agosto de %i com 31 dias",ano);
+      break;
+    case 9:
+      printf("Setembro de %i com 30 dias",ano);
+      break;
+    case 10:
+      printf("Outubro de %i com 31 dias",ano);
+      break;
+    case 11:
+      printf("Novembro de %i com 30 dias",ano);
+      break;
+    case 12:
+      printf("Dezembro de %i com 31 dias",ano);
+      break;
+    default:
+      printf("Valor não corresponde a nenhum mês");
+
+    
+	}
+ return meses;
+}
+
+
+int main(void) {
+  int a,m;
+
+
+    do{
+      printf("Digite um mês: ");
+      scanf("%i", &m);
+    }while(!(m > 0 && m < 13));
+    do{
+      printf("Digite um ano: ");
+      scanf("%i", &a);
+    }while(!(a > 0 && a < 2022));
+  
+  
+
+  
+  acharM(m,a);
+  
+  
+  return 0;
+}

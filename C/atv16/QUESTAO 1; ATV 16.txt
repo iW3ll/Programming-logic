@@ -1,0 +1,49 @@
+﻿#include <stdio.h>
+/*
+  Enunciado: Desenvolva um programa que preencha um vetor com trinta números inteiros. Em
+seguida deve-se copiar os elementos desse vetor para um outro vetor de tal forma
+que seus elementos fiquem invertidos, ou seja, o 1º elemento do primeiro vetor
+passa a ser o último do segundo vetor, o 2º elemento passa a ser o penúltimo e
+assim por diante. Ao final deve-se exibir os dois vetores de forma a visualizar a
+inversão dos elementos.
+*/
+
+
+void Entrada_dados(float *notas)
+{
+  int i;
+        for (i=0;i<30;i=i+1){
+                printf("Informe nota[%i]: ",i+1);
+                scanf("%f",&notas[i]);
+        }        
+}
+
+
+void mostrando_resultados_inversos(float *notas)
+{
+        int i;
+        printf("\nA  sequencia de notas na ordem inversa eh : \n");
+        for (i=30-1;i>=0;i=i-1)
+                {
+                  printf("\nnota[%i] = %.2f\n",i+1,notas[i]);
+            }
+        
+}
+        void mostrando_resultados_normal(float *notas)
+        {
+                int i;
+             printf("\nA  sequencia de notas na ordem normal eh: \n");
+                for (i=0;i<30;i++)
+                {
+                  printf("\nnota[%i] = %.2f\n",i+1,notas[i]);
+            }
+        }
+        
+        int main()
+        {
+                float Notas;
+                
+                Entrada_dados(&Notas);
+                mostrando_resultados_inversos(&Notas);
+                mostrando_resultados_normal(&Notas);
+        }

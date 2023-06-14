@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+/* Equipe 5: Cláudio Crisostomo, Eveny Neves, Ronald Nepomuceno, Vilmar Pereira e Wesley Luiz                    
+   Data de entrega: 18/08/22
+Enunciado 5: A série de Fibonacci é formada pela sequência: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55,...
+Escreva um programa que receba um conjunto de números e informe se o número
+pertence ou não a série de Fibonacci. A digitação dos números finaliza com a
+entrada do valor –999.*/
+
+int main() {
+  int t0, t1, t2, t3, n;
+  int i, encontrou;
+  t0 = 0;
+  t1 = 1;
+  t2 = 0;
+  t3 = 0;
+
+  do {
+    printf("Informe o numero  ser comparado: ");
+    scanf("%i", & n);
+
+    t0 = 0;
+    t1 = 1;
+    t2 = 0;
+    t3 = 0;
+    encontrou = 0;
+    for (i = 0; i < n; i++) {
+      t2 = t0 + t1;
+      if (t2 == n) {
+        encontrou = 1;
+        break;
+      }
+
+      t0 = t1;
+      t1 = t2;
+    }
+
+    if (encontrou == 1) {
+      printf("\n %i pertence a Fibonacci\n", n);
+    } else {
+      printf("\n %i nao pertence a Fibonacci\n", n);
+    }
+
+  } while (n != -999);
+
+}
